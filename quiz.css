@@ -1,0 +1,55 @@
+.question{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.answers {
+  margin-bottom: 20px;
+  text-align: left;
+  display: inline-block;
+}
+.answers label {
+  display: block;
+  margin-bottom: 10px;
+}
+.slide {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.active-slide {
+  opacity: 1;
+  z-index: 2;
+}
+.quiz-container {
+  position: relative;
+  height: 200px;
+  margin-top: 40px;
+}
+#clockdiv {
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 18px;
+}
+#clockdiv > div {
+    padding: 10px;
+    border-radius: 3px;
+    background: #0aa9c5;
+    display: inline-block;
+}
+#clockdiv div > span {
+    padding: 15px;
+    border-radius: 3px;
+    background: #3762f0;
+    display: inline-block;
+}
+.smalltext {
+    padding-top: 5px;
+    font-size: 12px;
+}
