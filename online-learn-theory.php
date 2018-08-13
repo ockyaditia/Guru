@@ -43,20 +43,10 @@
 		}
 	?>
 
-    <!-- ##### Hero Area Start ##### -->
-    <section class="hero-area bg-img bg-overlay-2by5" style="background-image: url(img/bg-img/bg4.jpg);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <!-- Hero Content -->
-                    <div class="hero-content text-center">
-                        <h2>Jenjang Pembelajaran</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ##### Hero Area End ##### -->
+    <!-- ##### Catagory ##### -->
+    <div class="clever-catagory bg-img d-flex align-items-center justify-content-center p-3" style="background-image: url(img/bg-img/bg4.jpg);">
+        <h3>Penerbit</h3>
+    </div>
 
     <!-- ##### Best Tutors Start ##### -->
     <section class="best-tutors-area section-padding-100" style="background-image: url(img/core-img/texture.png);">

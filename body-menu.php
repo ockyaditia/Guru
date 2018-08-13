@@ -42,18 +42,18 @@
                                 <li><a href="#">Produk Kami</a>
                                     <ul class="dropdown">
                                         <li><a href="online-learn.php">Belajar Online</a></li>
-                                        <li><a href="coming-soon.php">Les Online</a></li>
-                                        <li><a href="coming-soon.php">Digital Bootcamp</a></li>
-                                        <li><a href="coming-soon.php">Tryout Online</a></li>
-                                        <li><a href="coming-soon.php">Les Private</a></li>
-                                        <li><a href="coming-soon.php">Kelas Virtual</a></li>
+                                        <li><a href="online-tutoring.php">Les Online</a></li>
+                                        <li><a href="digital-bootcamp.php">Digital Bootcamp</a></li>
+                                        <li><a href="online-tryout.php">Tryout Online</a></li>
+                                        <li><a href="private-tutoring.php">Les Private</a></li>
+                                        <li><a href="virtual-class.php">Kelas Virtual</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="coming-soon.php">Materi</a></li>
-                                <li><a href="coming-soon.php">Pengajar</a></li>
-                                <li><a href="coming-soon.php">Blog</a></li>
-                                <li><a href="coming-soon.php">Tentang Kami</a></li>
-                                <li><a href="coming-soon.php">Bantuan</a></li>
+                                <!--<li><a href="coming-soon.php">Materi</a></li>
+                                <li><a href="coming-soon.php">Pengajar</a></li>-->
+                                <li><a href="blog.php">Blog</a></li>
+                                <li><a href="about-us.php">Tentang Kami</a></li>
+                                <li><a href="help.php">Bantuan</a></li>
                             </ul>
 
                             <!-- Search Button -->
