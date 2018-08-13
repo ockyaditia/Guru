@@ -16,7 +16,8 @@
              <input type="radio" name="question${questionNumber}" value="${letter}">
               ${letter} :
               ${currentQuestion.answers[letter]}
-           </label>`
+           </label>
+		   `
         );
       }
 
@@ -25,6 +26,12 @@
         `<div class="slide">
            <div class="question"> ${currentQuestion.question} </div>
            <div class="answers"> ${answers.join("")} </div>
+		   <div id="${currentQuestion.code}" style="display:none">
+				<video width="50%" height="480px" controls>
+					<source src="video/${currentQuestion.video}" type="video/mp4">
+					Browser anda tidak mendukung pemutar video.
+				</video>
+		   </div>
          </div>`
       );
     });
@@ -54,10 +61,22 @@
 
         // color the answers green
         answerContainers[questionNumber].style.color = "blue";
+	
+		var video = document.getElementById(currentQuestion.code);
+		video.style.display = "none";
+		
+		var quiz_container = document.getElementById("quiz_container");
+		quiz_container.style.paddingBottom = "0px";
       } else {
         // if answer is wrong or blank
         // color the answers red
         answerContainers[questionNumber].style.color = "red";
+	
+		var video = document.getElementById(currentQuestion.code);
+		video.style.display = "";
+		
+		var quiz_container = document.getElementById("quiz_container");
+		quiz_container.style.paddingBottom = "720px";
       }
     });
 

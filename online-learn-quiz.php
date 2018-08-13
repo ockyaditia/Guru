@@ -90,12 +90,12 @@
             </div>
         </div>
 		
-		<div class="register-contact-form mb-100 wow fadeInUp section-padding-0-100" data-wow-delay="250ms">
+		<div class="register-contact-form mb-100 wow fadeInUp section-padding-0-100" style="padding-bottom:480px;" data-wow-delay="250ms">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
                         <div class="forms " align="center">
-                            <div class="quiz-container">
+                            <div id="quiz_container" class="quiz-container">
 								<div id="quiz"></div>
 							</div>
 							<br>
@@ -105,36 +105,38 @@
 							<button id="submit" class="btn clever-btn">Yey!, Sudah Selesai</button>
 							<div id="results"></div>
 							
-							<?php
-								while ($data = $result_data->fetch_assoc()) {
-									$question = $data['question'];
-									$answer = $data['answer'];
-									$option_a = $data['option_a'];
-									$option_b = $data['option_b'];
-									$option_c = $data['option_c'];
-									$option_d = $data['option_d'];
-									$option_e = $data['option_e'];
-							?>
-							
 							<script>
 								var questions = [
+									<?php
+										while ($data = $result_data->fetch_assoc()) {
+											$code = $data['code'];
+											$question = $data['question'];
+											$answer = $data['answer'];
+											$option_a = $data['option_a'];
+											$option_b = $data['option_b'];
+											$option_c = $data['option_c'];
+											$option_d = $data['option_d'];
+											$option_e = $data['option_e'];
+											$video = $data['video'];
+									?>
 									{
-									question: "<?php echo $question; ?>?",
-									answers: {
-										<?php if ($option_a != "") { ?>A: "<?php echo $option_a; ?>", <?php } ?>
-										<?php if ($option_b != "") { ?>B: "<?php echo $option_b; ?>", <?php } ?>
-										<?php if ($option_c != "") { ?>C: "<?php echo $option_c; ?>", <?php } ?>
-										<?php if ($option_d != "") { ?>D: "<?php echo $option_d; ?>", <?php } ?>
-										<?php if ($option_e != "") { ?>E: "<?php echo $option_e; ?>", <?php } ?>
+										code: "<?php echo $code; ?>?",
+										question: "<?php echo $question; ?>?",
+										answers: {
+											<?php if ($option_a != "") { ?>A: "<?php echo $option_a; ?>", <?php } ?>
+											<?php if ($option_b != "") { ?>B: "<?php echo $option_b; ?>", <?php } ?>
+											<?php if ($option_c != "") { ?>C: "<?php echo $option_c; ?>", <?php } ?>
+											<?php if ($option_d != "") { ?>D: "<?php echo $option_d; ?>", <?php } ?>
+											<?php if ($option_e != "") { ?>E: "<?php echo $option_e; ?>", <?php } ?>
+										},
+										correctAnswer: "<?php echo $answer; ?>",
+										video: "<?php echo $video; ?>",
 									},
-									correctAnswer: "<?php echo $answer; ?>"
-									},
+									<?php
+										}
+									?>
 								];
 							</script>
-							
-							<?php
-								}
-							?>
 							
 							<script src="quiz.js"></script>
                         </div>

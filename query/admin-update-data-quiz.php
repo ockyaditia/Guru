@@ -3,6 +3,7 @@
 	include '../_session-admin.php';
 	
 	$code = $_POST['code'];
+	$code_old = $_POST['code_old'];
 	$class = $_POST['class'];
 	$subject = $_POST['subject'];
 	$question = $_POST['question'];
@@ -19,6 +20,7 @@
 			code='$code',
 			class='$class',
 			subject='$subject',
+			question='$question',
 			answer='$answer',
 			option_a='$option_a',
 			option_b='$option_b',
