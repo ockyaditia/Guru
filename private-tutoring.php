@@ -28,7 +28,7 @@
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Hero Area Start ##### -->
-    <section class="hero-area bg-img bg-overlay-2by5" style="background-image: url(img/bg-img/c9.jpg);">
+    <section class="hero-area bg-img bg-overlay-2by5" style="background-image: url(img/bg-img/bg2.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -48,7 +48,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading">
-                        <h3><i>#LearnIsGreat</i></h3>
+                        <h3 style="background-color:#bcf7cb;"><i>#LearnIsGreat</i></h3>
 						<br>
                         <h6>Dengan guru privat berkualitas datang ke rumah dengan harga terjangkau.</h6>
                     </div>

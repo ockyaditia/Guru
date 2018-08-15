@@ -28,12 +28,12 @@
     <!-- ##### Header Area End ##### -->
 	
 	<?php
-		$category = "";
-		if (isset($_GET['category'])) {
-			$category = $_GET['category'];
+		$subject_code = "";
+		if (isset($_GET['subject_code'])) {
+			$subject_code = $_GET['subject_code'];
 		}
 		
-		$sql_data = "SELECT * FROM subjects WHERE class='$category'";
+		$sql_data = "SELECT * FROM payment";
 		
 		if (!$result_data = $mysqli->query($sql_data)) {
 			$message = "Error.";
@@ -43,7 +43,7 @@
 
     <!-- ##### Catagory ##### -->
     <div class="clever-catagory bg-img d-flex align-items-center justify-content-center p-3" style="background-image: url(img/bg-img/bg4.jpg);">
-        <h3>Mata Pelajaran</h3>
+        <h3>Pembayaran</h3>
     </div>
 
     <!-- ##### Popular Courses Start ##### -->
@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading">
-                        <h3>Pilih Mata Pelajaran</h3>
+                        <h3>Pilih Pembayaran</h3>
                     </div>
                 </div>
             </div>
@@ -62,12 +62,9 @@
 					$transition = 0;
 					while ($data = $result_data->fetch_assoc()) {
 						$code = $data['code'];
-						$name = $data['name'];
-						$class = $data['class'];
-						$category = $data['category'];
-						$description = $data['description'];
-						$seat = $data['seat'];
-						$price = $data['price'];
+						$bank_name = $data['bank_name'];
+						$account_name = $data['account_name'];
+						$account_number = $data['account_number'];
 						$img = $data['img'];
 						
 						$transition += 250;
@@ -75,29 +72,29 @@
                 <!-- Single Popular Course -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-popular-course mb-100 wow fadeInUp" data-wow-delay="<?php echo $transition; ?>ms">
-                        <img src="img/bg-img/<?php echo $img; ?>" alt="<?php echo $name; ?>">
+                        <img src="img/bg-img/<?php echo $img; ?>" alt="<?php echo $account_name; ?>">
                         <!-- Course Content -->
                         <div class="course-content">
-                            <a href="online-learn-theory.php?code=<?php echo $code; ?>&subject=<?php echo $name; ?>&class=<?php echo $class; ?>"><h4><?php echo $name; ?></h4></a>
+                            <a href="#"><h4><?php echo $bank_name; ?></h4></a>
                             <div class="meta d-flex align-items-center">
-                                <a href="#"><?php echo $class; ?></a>
+                                <a href="#"><?php echo $account_name; ?></a>
                                 <span><i class="fa fa-circle" aria-hidden="true"></i></span>
-                                <a href="#"><?php echo $category; ?></a>
+                                <a href="#"><?php echo $account_number; ?></a>
                             </div>
-                            <p><?php echo $description; ?></p>
+                            <!--<p><?php //echo $bank_name; ?></p>-->
                         </div>
                         <!-- Seat Rating Fee -->
                         <div class="seat-rating-fee d-flex justify-content-between">
                             <div class="seat-rating h-100 d-flex align-items-center">
-                                <div class="seat">
-                                    <i class="fa fa-user" aria-hidden="true"></i> <?php echo $seat; ?>
-                                </div>
+                                <!--<div class="seat">
+                                    <i class="fa fa-user" aria-hidden="true"></i> <?php //echo $seat; ?>
+                                </div>-->
                                 <!--<div class="rating">
                                     <i class="fa fa-star" aria-hidden="true"></i> 5
                                 </div>-->
                             </div>
                             <div class="course-fee h-100">
-                                <a href="#" class="free"><?php echo $price; ?></a>
+                                <a href="transactions.php?subject_code=<?php echo $subject_code; ?>&payment_code=<?php echo $code; ?>">Bayar</a>
                             </div>
                         </div>
                     </div>

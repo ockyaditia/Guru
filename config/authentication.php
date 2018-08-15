@@ -18,6 +18,7 @@
 		$RSA = new RSA();
 		
 		if ($password == $RSA->decrypt($data['password'])) {
+			$_SESSION['code'] = $data['code'];
 			$_SESSION['email'] = $data['email'];
 			$_SESSION['status'] = $data['status'];
 			$_SESSION['name'] = $data['name'];

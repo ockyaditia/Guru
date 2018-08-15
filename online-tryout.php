@@ -48,7 +48,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading">
-                        <h3><i>#LearnIsChallenge</i></h3>
+                        <h3 style="background-color:#77ec20;"><i>#LearnIsChallenge</i></h3>
 						<br>
                         <h6>Dengan soal-soal yang bisa kamu kerjakan langsung.</h6>
                     </div>

@@ -48,7 +48,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading">
-                        <h3><i>#LearnIsVirtual</i></h3>
+                        <h3 style="background-color:#ffc3a0;"><i>#LearnIsVirtual</i></h3>
 						<br>
                         <h6>Dengan kelas virtual yang memungkinkan kamu belajar bersama teman-teman secara online.</h6>
                     </div>

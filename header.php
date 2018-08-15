@@ -1,5 +1,7 @@
 	<?php
-		session_start();
+		if (!isset($_SESSION)) { 
+			session_start(); 
+		}
 		require ("config/config.php");
 		
 		if (isset($_SESSION['email'])) {

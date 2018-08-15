@@ -24,7 +24,7 @@
                             <ul>
                                 <li><a href="index.php">Beranda</a></li>
 								<?php
-									if (isset($email)) {
+									if (isset($email) && isset($status) && $status == "Admin") {
 								?>
                                 <li><a href="#">Kelola Data</a>
                                     <ul class="dropdown">
@@ -34,6 +34,8 @@
                                         <li><a href="admin-data-ebook.php">Data E-Buku</a></li>
                                         <li><a href="admin-data-video.php">Data Video</a></li>
                                         <li><a href="admin-data-quiz.php">Data Kuis</a></li>
+                                        <li><a href="admin-data-payment.php">Data Pembayaran</a></li>
+                                        <li><a href="admin-data-transactions.php">Data Transaksi</a></li>
                                     </ul>
                                 </li>
 								<?php

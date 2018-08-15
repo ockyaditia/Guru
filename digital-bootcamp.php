@@ -48,7 +48,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading">
-                        <h3><i>#LearnIsExciting</i></h3>
+                        <h3 style="background-color:#990000;"><i>#LearnIsExciting</i></h3>
 						<br>
                         <h6>Group chat belajar dengan tutor standby, modul bimbel lengkap, latihan soal dan tryout, serta akses video belajar lengkap di ruangbelajar.</h6>
                     </div>

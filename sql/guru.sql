@@ -1,22 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.2.11
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 12, 2018 at 12:33 PM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.9
+-- Generation Time: 15 Agu 2018 pada 04.43
+-- Versi Server: 5.6.21
+-- PHP Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `guru`
@@ -25,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `e_book`
+-- Struktur dari tabel `e_book`
 --
 
-CREATE TABLE `e_book` (
+CREATE TABLE IF NOT EXISTS `e_book` (
   `code` varchar(50) NOT NULL,
   `class` varchar(250) NOT NULL,
   `subject` varchar(150) NOT NULL,
@@ -39,7 +37,7 @@ CREATE TABLE `e_book` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `e_book`
+-- Dumping data untuk tabel `e_book`
 --
 
 INSERT INTO `e_book` (`code`, `class`, `subject`, `publisher`, `description`, `file_name`, `img`) VALUES
@@ -48,10 +46,10 @@ INSERT INTO `e_book` (`code`, `class`, `subject`, `publisher`, `description`, `f
 -- --------------------------------------------------------
 
 --
--- Table structure for table `learning_level`
+-- Struktur dari tabel `learning_level`
 --
 
-CREATE TABLE `learning_level` (
+CREATE TABLE IF NOT EXISTS `learning_level` (
   `code` varchar(50) NOT NULL,
   `name` varchar(250) NOT NULL,
   `class` varchar(150) NOT NULL,
@@ -61,7 +59,7 @@ CREATE TABLE `learning_level` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `learning_level`
+-- Dumping data untuk tabel `learning_level`
 --
 
 INSERT INTO `learning_level` (`code`, `name`, `class`, `age`, `description`, `img`) VALUES
@@ -73,10 +71,31 @@ INSERT INTO `learning_level` (`code`, `name`, `class`, `age`, `description`, `im
 -- --------------------------------------------------------
 
 --
--- Table structure for table `quiz`
+-- Struktur dari tabel `payment`
 --
 
-CREATE TABLE `quiz` (
+CREATE TABLE IF NOT EXISTS `payment` (
+  `code` varchar(50) NOT NULL,
+  `bank_name` varchar(150) NOT NULL,
+  `account_name` varchar(150) NOT NULL,
+  `account_number` varchar(150) NOT NULL,
+  `img` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `payment`
+--
+
+INSERT INTO `payment` (`code`, `bank_name`, `account_name`, `account_number`, `img`) VALUES
+('BCA1', 'Bank BCA 1', 'Nama Rekening 1', 'Nomor Rekening 1', '1534295354.png');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `quiz`
+--
+
+CREATE TABLE IF NOT EXISTS `quiz` (
   `code` varchar(50) NOT NULL,
   `class` varchar(250) NOT NULL,
   `subject` varchar(150) NOT NULL,
@@ -91,19 +110,20 @@ CREATE TABLE `quiz` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `quiz`
+-- Dumping data untuk tabel `quiz`
 --
 
 INSERT INTO `quiz` (`code`, `class`, `subject`, `question`, `answer`, `option_a`, `option_b`, `option_c`, `option_d`, `option_e`, `video`) VALUES
-('AGAMA_ISLAM_SD_ERLANGGA_KUIS', 'Sekolah Dasar (SD)', 'Agama Islam', 'Pertanyaan 1', 'A', 'Opsi A', 'Opsi B', 'Opsi C', '', '', '1534005029.mp4');
+('AGAMA_ISLAM_SD_ERLANGGA_KUIS_PERTANYAAN_1', 'Sekolah Dasar (SD)', 'Agama Islam', 'Pertanyaan 1', 'A', 'Opsi A', 'Opsi B', 'Opsi C', '', '', '1534005029.mp4'),
+('AGAMA_ISLAM_SD_ERLANGGA_KUIS_PERTANYAAN_2', 'Sekolah Dasar (SD)', 'Agama Islam', 'Pertanyaan 2', 'B', 'Opsi A', 'Opsi B', 'Opsi C', 'Opsi D', 'Opsi E', '1534005029.mp4');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `subjects`
+-- Struktur dari tabel `subjects`
 --
 
-CREATE TABLE `subjects` (
+CREATE TABLE IF NOT EXISTS `subjects` (
   `code` varchar(50) NOT NULL,
   `name` varchar(150) NOT NULL,
   `class` varchar(250) NOT NULL,
@@ -116,7 +136,7 @@ CREATE TABLE `subjects` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `subjects`
+-- Dumping data untuk tabel `subjects`
 --
 
 INSERT INTO `subjects` (`code`, `name`, `class`, `category`, `description`, `seat`, `rating`, `price`, `img`) VALUES
@@ -125,10 +145,36 @@ INSERT INTO `subjects` (`code`, `name`, `class`, `category`, `description`, `sea
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_access`
+-- Struktur dari tabel `transactions`
 --
 
-CREATE TABLE `user_access` (
+CREATE TABLE IF NOT EXISTS `transactions` (
+`code` int(50) NOT NULL,
+  `user_code` varchar(50) NOT NULL,
+  `subject_code` varchar(50) NOT NULL,
+  `payment_code` varchar(50) NOT NULL,
+  `bank_name` varchar(150) NOT NULL,
+  `account_name` varchar(150) NOT NULL,
+  `account_number` varchar(150) NOT NULL,
+  `img` text NOT NULL,
+  `approval` int(1) NOT NULL DEFAULT '1',
+  `timestamp` varchar(150) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `transactions`
+--
+
+INSERT INTO `transactions` (`code`, `user_code`, `subject_code`, `payment_code`, `bank_name`, `account_name`, `account_number`, `img`, `approval`, `timestamp`) VALUES
+(1, 'ADMIN', 'AGAMA_ISLAM_SD', 'BCA1', 'BCA', 'Ocky Aditia Saputra', '0123456789', '1534298667.png', 3, '1534298667');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user_access`
+--
+
+CREATE TABLE IF NOT EXISTS `user_access` (
   `code` varchar(50) NOT NULL,
   `email` varchar(150) NOT NULL,
   `password` text NOT NULL,
@@ -141,7 +187,7 @@ CREATE TABLE `user_access` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user_access`
+-- Dumping data untuk tabel `user_access`
 --
 
 INSERT INTO `user_access` (`code`, `email`, `password`, `name`, `status`, `phone_number`, `facebook`, `twitter`, `instagram`) VALUES
@@ -151,10 +197,10 @@ INSERT INTO `user_access` (`code`, `email`, `password`, `name`, `status`, `phone
 -- --------------------------------------------------------
 
 --
--- Table structure for table `video`
+-- Struktur dari tabel `video`
 --
 
-CREATE TABLE `video` (
+CREATE TABLE IF NOT EXISTS `video` (
   `code` varchar(50) NOT NULL,
   `class` varchar(250) NOT NULL,
   `subject` varchar(150) NOT NULL,
@@ -164,7 +210,7 @@ CREATE TABLE `video` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `video`
+-- Dumping data untuk tabel `video`
 --
 
 INSERT INTO `video` (`code`, `class`, `subject`, `publisher`, `description`, `file_name`) VALUES
@@ -178,39 +224,59 @@ INSERT INTO `video` (`code`, `class`, `subject`, `publisher`, `description`, `fi
 -- Indexes for table `e_book`
 --
 ALTER TABLE `e_book`
-  ADD PRIMARY KEY (`code`);
+ ADD PRIMARY KEY (`code`);
 
 --
 -- Indexes for table `learning_level`
 --
 ALTER TABLE `learning_level`
-  ADD PRIMARY KEY (`code`);
+ ADD PRIMARY KEY (`code`);
+
+--
+-- Indexes for table `payment`
+--
+ALTER TABLE `payment`
+ ADD PRIMARY KEY (`code`);
 
 --
 -- Indexes for table `quiz`
 --
 ALTER TABLE `quiz`
-  ADD PRIMARY KEY (`code`);
+ ADD PRIMARY KEY (`code`);
 
 --
 -- Indexes for table `subjects`
 --
 ALTER TABLE `subjects`
-  ADD PRIMARY KEY (`code`);
+ ADD PRIMARY KEY (`code`);
+
+--
+-- Indexes for table `transactions`
+--
+ALTER TABLE `transactions`
+ ADD PRIMARY KEY (`code`);
 
 --
 -- Indexes for table `user_access`
 --
 ALTER TABLE `user_access`
-  ADD PRIMARY KEY (`code`);
+ ADD PRIMARY KEY (`code`);
 
 --
 -- Indexes for table `video`
 --
 ALTER TABLE `video`
-  ADD PRIMARY KEY (`code`);
-COMMIT;
+ ADD PRIMARY KEY (`code`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `transactions`
+--
+ALTER TABLE `transactions`
+MODIFY `code` int(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

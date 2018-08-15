@@ -48,7 +48,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading">
-                        <h3><i>#LearnIsSimple</i></h3>
+                        <h3 style="background-color:#ff288d;"><i>#LearnIsSimple</i></h3>
 						<br>
                         <h6>Tutor les online akan membantu kamu membahas soal dan mengerti pelajaran via live chat!.</h6>
                     </div>

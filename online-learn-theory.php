@@ -1,4 +1,48 @@
 <!DOCTYPE html>
+<?php
+	session_start();
+	require ("config/config.php");
+	
+	$subject = "";
+	$class = "";
+	if (isset($_GET['subject']) && isset($_GET['class']) && isset($_GET['code'])) {
+		$subject_code = $_GET['code'];
+		$subject = $_GET['subject'];
+		$class = $_GET['class'];
+	
+		if (!isset($_SESSION['code'])) {
+			header('location:login.php');
+		}
+		
+		$code = $_SESSION['code'];
+		
+		$sql = "SELECT *, count(*) FROM transactions WHERE user_code='$code' AND subject_code='$subject_code'";
+		
+		if (!$result = $mysqli->query($sql)) {
+			$message = "Error.";
+			echo "<script type='text/javascript'>alert('$message');</script>";
+		}
+		
+		$data = $result->fetch_assoc();
+		$count = $data['count(*)'];
+		$approval = $data['approval'];
+		
+		if ($count == 0) {
+			header('location:payment.php?subject_code='.$subject_code);
+		} else {
+			if ($approval != 3) {
+				header('location:transactions.php?subject_code='.$subject_code);
+			}
+		} 
+	}
+	
+	$sql_data = "SELECT * FROM e_book WHERE subject='$subject' AND class='$class'";
+	
+	if (!$result_data = $mysqli->query($sql_data)) {
+		$message = "Error.";
+		echo "<script type='text/javascript'>alert('$message');</script>";
+	}
+?>
 <html lang="en">
 
 <head>
@@ -26,22 +70,6 @@
 		?>
     </header>
     <!-- ##### Header Area End ##### -->
-	
-	<?php
-		$subject = "";
-		$class = "";
-		if (isset($_GET['subject']) && isset($_GET['class'])) {
-			$subject = $_GET['subject'];
-			$class = $_GET['class'];
-		}
-		
-		$sql_data = "SELECT * FROM e_book WHERE subject='$subject' AND class='$class'";
-		
-		if (!$result_data = $mysqli->query($sql_data)) {
-			$message = "Error.";
-			echo "<script type='text/javascript'>alert('$message');</script>";
-		}
-	?>
 
     <!-- ##### Catagory ##### -->
     <div class="clever-catagory bg-img d-flex align-items-center justify-content-center p-3" style="background-image: url(img/bg-img/bg4.jpg);">
