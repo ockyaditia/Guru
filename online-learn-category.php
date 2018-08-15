@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<?php
+	session_start();
+	require ("config/config.php");
+	
+	if (!isset($_SESSION['code'])) {
+		header('location:login.php');
+	}
+?>
 <html lang="en">
 
 <head>

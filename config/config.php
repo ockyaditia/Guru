@@ -1,14 +1,14 @@
 <?php
     //error_reporting(E_ALL ^ E_DEPRECATED);
-	//$host = 'mysql.idhostinger.com';
-	//$user = 'u766613813_sap';
-	//$pass = 'u766613813_sap';
-	//$dbname = 'u766613813_sap';
-	
 	$host = 'localhost';
 	$user = 'root';
 	$pass = '';
 	$dbname = 'guru';
+	
+	//$host = 'ftp.tarorevolution.com';
+	//$user = 'tarorevo_guru';
+	//$pass = 'z1k0yZg24J';
+	//$dbname = 'tarorevo_guru';
 
 	$mysqli = new mysqli($host, $user, $pass, $dbname);
 	

@@ -1,0 +1,13 @@
+tarorevolution.com:2082
+
+username: tarorevo
+pass: z1k0yZg24J
+
+ftp.tarorevolution.com
+
+
+FTP Username: guru@tarorevolution.com
+FTP server: ftp.tarorevolution.com
+FTP & explicit FTPS port:  21
+
+Database: tarorevo_guru
