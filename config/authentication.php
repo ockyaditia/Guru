@@ -26,7 +26,7 @@
 			$_SESSION['facebook'] = $data['facebook'];
 			$_SESSION['twitter'] = $data['twitter'];
 			$_SESSION['instagram'] = $data['instagram'];
-			header('location:../index.php');
+			header('location:../index.php?success=1');
 		} else {
 			header('location:../login.php?fail=1');
 		}

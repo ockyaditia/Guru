@@ -4,6 +4,10 @@
 <head>
 	<?php
 		include 'header.php';
+		
+		if (isset($_GET['success'])) {
+			echo "<script type='text/javascript'>alert('Anda berhasil Masuk, Selamat Datang di Guru.');</script>";
+		}
 	?>
 </head>
 
