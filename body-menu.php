@@ -76,8 +76,7 @@
                                     <div class="dropdown">
                                         <a class="dropdown-toggle" href="#" role="button" id="userName" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $name; ?></a>
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userName">
-                                            <a class="dropdown-item" href="coming-soon.php">Profil</a>
-                                            <a class="dropdown-item" href="coming-soon.php">Informasi Akun</a>
+                                            <a class="dropdown-item" href="profile.php">Profil</a>
                                             <a class="dropdown-item" href="logout.php">Keluar</a>
                                         </div>
                                     </div>
