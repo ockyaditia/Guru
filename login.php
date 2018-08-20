@@ -46,6 +46,16 @@
 	</script>
 	
 	<?php
+		if (isset($_GET['success']) && $_GET['success'] == 1) {
+	?>
+		<div class="alert alert-success" role="alert">
+			<center><strong>Berhasil Daftar, Silahkan Masuk.</strong></center>
+		</div>
+	<?php
+		}
+	?>
+	
+	<?php
 		if (isset($_GET['fail'])) {
 	?>
 		<div class="alert alert-danger" role="alert">

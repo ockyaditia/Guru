@@ -4,10 +4,6 @@
 <head>
 	<?php
 		include 'header.php';
-		
-		if (isset($_GET['success'])) {
-			echo "<script type='text/javascript'>alert('Anda berhasil Masuk, Selamat Datang di Guru.');</script>";
-		}
 	?>
 </head>
 
@@ -30,6 +26,16 @@
 		?>
     </header>
     <!-- ##### Header Area End ##### -->
+	
+	<?php
+		if (isset($_GET['success']) && $_GET['success'] == 1) {
+	?>
+		<div class="alert alert-success" role="alert">
+			<center><strong>Berhasil Masuk, Selamat Datang di Guru.</strong></center>
+		</div>
+	<?php
+		}
+	?>
 	
 	<script>
 		function checkPassword() {
