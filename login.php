@@ -8,6 +8,8 @@
 </head>
 
 <body>
+	<script src="js/facebook.js"></script>
+
     <!-- Preloader -->
     <div id="preloader">
         <div class="spinner"></div>
@@ -98,6 +100,35 @@
                                     </div>
                                 </div>
                             </form>
+							<form action="query/register-facebook.php" method="post">
+								<input type="hidden" name="code" id="facebook-id" required>
+								<input type="hidden" name="name" id="facebook-name" required>
+								<input type="hidden" name="email" id="facebook-email" required>
+								<input type="hidden" name="facebook"id="facebook-facebook" >
+								<button id="facebook-click" style="visibility:hidden"></button>
+                            </form>
+							<br>
+							<br>
+							<div class="row">
+								<div class="col">
+									<!--<a href="#" class="btn_login w-100 fb fb-login-button">
+										<i class="fa fa-facebook fa-fw"></i> Masuk dengan Facebook
+									</a>
+									<a href="#" class="btn_login w-100 twitter">
+										<i class="fa fa-twitter fa-fw"></i> Masuk dengan Twitter
+									</a>-->
+									<div align="center">
+										<div class="fb-login-button w-100" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div>
+										<!--<div id="fb_id"></div>
+										<div id="fb_name"></div>
+										<div id="fb_email"></div>
+										<button onclick="javascript:login();">Login Facebook</button>
+										<br>
+										<button onclick="javascript:logout();">Logout from Facebook</button>-->
+										<div id="facebook-status"></div>
+									</div>
+								</div>
+							</div>
                         </div>
                     </div>
                 </div>

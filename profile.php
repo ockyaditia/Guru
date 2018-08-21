@@ -46,18 +46,18 @@
 			<div class="userthumb">
 				<img src="img/bg-img/t-unknown.png" alt="">
 			</div>
-            <h3><?php echo $name_info; ?></h3>
-            <h5>Status: <?php echo $status_info; ?></h5>
+            <h3><?php echo $_SESSION['name']; ?></h3>
+            <h5>Status: <?php echo $_SESSION['status']; ?></h5>
 			<br>
-            <h4><?php echo $email_info; ?></h4>
-            <h4><?php echo $phone_number_info; ?></h4>
+            <h4><?php echo $_SESSION['email']; ?></h4>
+            <h4><?php echo $_SESSION['phone_number']; ?></h4>
 			<br>
             <div class="meta d-flex align-items-center justify-content-center">
-                <a href="<?php echo $facebook_info; ?>">Facebook</a>
+                <a href="<?php echo $_SESSION['facebook']; ?>">Facebook</a>
                 <span><i class="fa fa-circle" aria-hidden="true"></i></span>
-                <a href="<?php echo $instagram_info; ?>">Instagram</a>
+                <a href="<?php echo $_SESSION['instagram']; ?>">Instagram</a>
                 <span><i class="fa fa-circle" aria-hidden="true"></i></span>
-                <a href="<?php echo $twitter_info; ?>">Twitter</a>
+                <a href="<?php echo $_SESSION['twitter']; ?>">Twitter</a>
             </div>
         </div>
     </div>
