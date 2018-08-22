@@ -27,6 +27,16 @@
     </header>
     <!-- ##### Header Area End ##### -->
 	
+	<?php
+		if (isset($_GET['fail'])) {
+	?>
+		<div class="alert alert-danger" role="alert">
+			<center><strong>Gagal Tambah Data!</strong>. Cek Kembali Data!.</center>
+		</div>
+	<?php
+		}
+	?>
+	
 	<script>
 		function checkPassword() {
 			$("#loader-icon2").show();

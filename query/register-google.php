@@ -6,7 +6,6 @@
 	$email = $_POST['email'];
 	$name = $_POST['name'];
 	$status = "Pelajar";
-	$facebook = $_POST['facebook'];
 	
 	$sql_select = "SELECT count(*) FROM user_access WHERE code = '$code'";
 	
@@ -20,12 +19,12 @@
 	
 	if ($count == 0) {
 		// Perform an SQL query
-		$sql = "INSERT INTO user_access(code, email, name, status, facebook)
-				values('$code', '$email', '$name', '$status', '$facebook')";
+		$sql = "INSERT INTO user_access(code, email, name, status)
+				values('$code', '$email', '$name', '$status')";
 	} else {
 		// Perform an SQL query
-		$sql = "REPLACE INTO user_access(code, email, name, status, facebook)
-				values('$code', '$email', '$name', '$status', '$facebook')";
+		$sql = "REPLACE INTO user_access(code, email, name, status)
+				values('$code', '$email', '$name', '$status')";
 	}
 
 	if (!$result = $mysqli->query($sql)) {
@@ -44,7 +43,7 @@
 		$_SESSION['status'] = $status;
 		$_SESSION['name'] = $name;
 		$_SESSION['phone_number'] = "";
-		$_SESSION['facebook'] = $facebook;
+		$_SESSION['facebook'] = "";
 		$_SESSION['twitter'] = "";
 		$_SESSION['instagram'] = "";
 		header('location:../index.php?success=1');

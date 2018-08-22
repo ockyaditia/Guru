@@ -2,14 +2,15 @@
 <html lang="en">
 
 <head>
+	<script src="https://apis.google.com/js/api:client.js"></script>
+	<script src="js/facebook.js"></script>
+	<script src="js/google.js"></script>
 	<?php
 		include 'header.php';
 	?>
 </head>
 
 <body>
-	<script src="js/facebook.js"></script>
-
     <!-- Preloader -->
     <div id="preloader">
         <div class="spinner"></div>
@@ -100,6 +101,9 @@
                                     </div>
                                 </div>
                             </form>
+							<a href="register.php" class="btn_login w-100 reg">
+								DAFTAR
+							</a>
 							<form action="query/register-facebook.php" method="post">
 								<input type="hidden" name="code" id="facebook-id" required>
 								<input type="hidden" name="name" id="facebook-name" required>
@@ -107,25 +111,38 @@
 								<input type="hidden" name="facebook"id="facebook-facebook" >
 								<button id="facebook-click" style="visibility:hidden"></button>
                             </form>
+							<form action="query/register-google.php" method="post">
+								<input type="hidden" name="code" id="google-id" required>
+								<input type="hidden" name="name" id="google-name" required>
+								<input type="hidden" name="email" id="google-email" required>
+								<button id="google-login" style="visibility:hidden"></button>
+                            </form>
 							<br>
 							<br>
 							<div class="row">
 								<div class="col">
-									<!--<a href="#" class="btn_login w-100 fb fb-login-button">
+									<a id="google-click" href="#" class="btn_login w-100 google">
+										<i class="fa fa-google fa-fw"></i> Masuk dengan Google
+									</a>
+									<script>startApp();</script>
+									<a href="#" onclick="javascript:login();" class="btn_login w-100 fb">
 										<i class="fa fa-facebook fa-fw"></i> Masuk dengan Facebook
 									</a>
-									<a href="#" class="btn_login w-100 twitter">
+									<a style="visibility:hidden;" href="#" class="btn_login w-100 twitter">
 										<i class="fa fa-twitter fa-fw"></i> Masuk dengan Twitter
-									</a>-->
+									</a>
 									<div align="center">
-										<div class="fb-login-button w-100" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div>
+										<!--<div class="fb-login-button w-100" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div>-->
 										<!--<div id="fb_id"></div>
 										<div id="fb_name"></div>
 										<div id="fb_email"></div>
 										<button onclick="javascript:login();">Login Facebook</button>
 										<br>
 										<button onclick="javascript:logout();">Logout from Facebook</button>-->
+										<div id="google-status"></div>
 										<div id="facebook-status"></div>
+										<br>
+										<!--<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>-->
 									</div>
 								</div>
 							</div>

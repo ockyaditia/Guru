@@ -1978,6 +1978,12 @@ textarea:focus {
   color: white;
 }
 
+.reg {
+  letter-spacing: 1px;
+  background-color: #7FFF00;
+  color: white;
+}
+
 .btn_login {
   width: 100%;
   text-align: center;

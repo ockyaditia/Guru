@@ -29,7 +29,7 @@
 		echo "Query" . $sql . "\n";
 		echo "Error Number: " . $mysqli->errno . "\n";
 		echo "Error Detail: " . $mysqli->error . "\n";
-		header('location:../register?fail='.$mysqli->errno);
+		header('location:../register.php?fail='.$mysqli->errno);
 	} else {
 		header('location:../login.php?success=1');
 	}
