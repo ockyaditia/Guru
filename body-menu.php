@@ -28,7 +28,7 @@
 								?>
                                 <li><a href="#">Kelola Web</a>
                                     <ul class="dropdown">
-                                        <li><a href="admin-data-logo.php">Nama dan Logo Web</a></li>
+                                        <li><a href="admin-data-logo.php">Nama dan Logo</a></li>
                                         <li><a href="admin-data-learning-level-menu.php">Menu Belajar Online</a></li>
                                     </ul>
                                 </li>
