@@ -87,33 +87,17 @@
                                     </div>
 									<div class="col-12">
                                         <div class="form-group">
-											<select class="form-control" id="name" name="name" required>
-												<option value="" disabled selected>Pilih Jenjang</option>
-												<option value="Sekolah Dasar (SD)">Sekolah Dasar (SD)</option>
-												<option value="Sekolah Menengah Pertama (SMP)">Sekolah Menengah Pertama (SMP)</option>
-												<option value="Sekolah Menengah Atas (SMA)">Sekolah Menengah Atas (SMA)</option>
-												<option value="Sekolah Menengah Kejuruan (SMK)">Sekolah Menengah Kejuruan (SMK)</option>
-											</select>
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Jenjang Pembelajaran" required>
                                         </div>
                                     </div>
 									<div class="col-12">
                                         <div class="form-group">
-											<select class="form-control" id="class" name="class" required>
-												<option value="" disabled selected>Pilih Kelas</option>
-												<option value="Kelas 1 - 6">Kelas 1 - 6</option>
-												<option value="Kelas 7 - 9">Kelas 7 - 9</option>
-												<option value="Kelas 10 - 12">Kelas 10 - 12</option>
-											</select>
+                                            <input type="text" class="form-control" id="class" name="class" placeholder="Kelas" required>
                                         </div>
                                     </div>
 									<div class="col-12">
                                         <div class="form-group">
-											<select class="form-control" id="age" name="age" required>
-												<option value="" disabled selected>Pilih Umur</option>
-												<option value="Umur 7 - 12 Tahun">Umur 7 - 12 Tahun</option>
-												<option value="Umur 13 - 15 Tahun">Umur 13 - 15 Tahun</option>
-												<option value="Umur 16 - 18 Tahun">Umur 16 - 18 Tahun</option>
-											</select>
+                                            <input type="text" class="form-control" id="age" name="age" placeholder="Umur" required>
                                         </div>
                                     </div>
                                     <div class="col-12">

@@ -116,33 +116,17 @@
                                     </div>
 									<div class="col-12">
                                         <div class="form-group">
-											<select class="form-control" id="name" name="name" required>
-												<option value="" disabled selected>Pilih Jenjang</option>
-												<option value="Sekolah Dasar (SD)" <?php if ($name == 'Sekolah Dasar (SD)') echo 'selected'; ?>>Sekolah Dasar (SD)</option>
-												<option value="Sekolah Menengah Pertama (SMP)" <?php if ($name == 'Sekolah Menengah Pertama (SMP)') echo 'selected'; ?>>Sekolah Menengah Pertama (SMP)</option>
-												<option value="Sekolah Menengah Atas (SMA)" <?php if ($name == 'Sekolah Menengah Atas (SMA)') echo 'selected'; ?>>Sekolah Menengah Atas (SMA)</option>
-												<option value="Sekolah Menengah Kejuruan (SMK)" <?php if ($name == 'Sekolah Menengah Kejuruan (SMK)') echo 'selected'; ?>>Sekolah Menengah Kejuruan (SMK)</option>
-											</select>
+											<input type="text" class="form-control" id="name" name="name" placeholder="Jenjang Pembelajaran" value="<?php echo $name; ?>" required>
                                         </div>
                                     </div>
 									<div class="col-12">
                                         <div class="form-group">
-											<select class="form-control" id="class" name="class" required>
-												<option value="" disabled selected>Pilih Kelas</option>
-												<option value="Kelas 1 - 6" <?php if ($class == 'Kelas 1 - 6') echo 'selected'; ?>>Kelas 1 - 6</option>
-												<option value="Kelas 7 - 9" <?php if ($class == 'Kelas 7 - 9') echo 'selected'; ?>>Kelas 7 - 9</option>
-												<option value="Kelas 10 - 12" <?php if ($class == 'Kelas 10 - 12') echo 'selected'; ?>>Kelas 10 - 12</option>
-											</select>
+                                            <input type="text" class="form-control" id="class" name="class" placeholder="Kelas" value="<?php echo $class; ?>" required>
                                         </div>
                                     </div>
 									<div class="col-12">
                                         <div class="form-group">
-											<select class="form-control" id="age" name="age" required>
-												<option value="" disabled selected>Pilih Umur</option>
-												<option value="Umur 7 - 12 Tahun" <?php if ($age == 'Umur 7 - 12 Tahun') echo 'selected'; ?>>Umur 7 - 12 Tahun</option>
-												<option value="Umur 13 - 15 Tahun" <?php if ($age == 'Umur 13 - 15 Tahun') echo 'selected'; ?>>Umur 13 - 15 Tahun</option>
-												<option value="Umur 16 - 18 Tahun" <?php if ($age == 'Umur 16 - 18 Tahun') echo 'selected'; ?>>Umur 16 - 18 Tahun</option>
-											</select>
+                                            <input type="text" class="form-control" id="age" name="age" placeholder="Umur" value="<?php echo $age; ?>" required>
                                         </div>
                                     </div>
                                     <div class="col-12">
