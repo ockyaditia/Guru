@@ -17,28 +17,17 @@
 	
 	<?php
 		require ("config/config.php");
-		$sql = "SELECT * FROM user_access WHERE status = 'Admin'";
+		$sql = "SELECT * FROM info";
 		if (!$result = $mysqli->query($sql)) {
 			$message = "Error.";
 			echo "<script type='text/javascript'>alert('$message');</script>";
 			exit;
 		}
 		
-		$code_info = "";
-		$email_info = "";
-		$name_info = "";
-		$status_info = "";
-		$phone_number_info = "";
-		$facebook_info = "";
-		$twitter_info = "";
-		$instagram_info = "";
-		
 		while ($data = $result->fetch_assoc()) {
 			$code_info = $data['code'];
 			$email_info = $data['email'];
-			$name_info = $data['name'];
-			$status_info = $data['status'];
-			$phone_number_info = $data['phone_number'];
+			$phone_info = $data['phone'];
 			$facebook_info = $data['facebook'];
 			$twitter_info = $data['twitter'];
 			$instagram_info = $data['instagram'];

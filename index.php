@@ -34,6 +34,12 @@
 			<center><strong>Berhasil Masuk, Selamat Datang di <?php echo $logo_name; ?>.</strong></center>
 		</div>
 	<?php
+		} else if (isset($_GET['success']) && $_GET['success'] == 2) {
+	?>
+		<div class="alert alert-success" role="alert">
+			<center><strong>Berhasil Ubah Data!</strong></center>
+		</div>
+	<?php
 		}
 	?>
 	

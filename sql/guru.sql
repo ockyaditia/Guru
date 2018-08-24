@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 15 Agu 2018 pada 04.43
+-- Generation Time: 24 Agu 2018 pada 10.35
 -- Versi Server: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -19,6 +19,62 @@ SET time_zone = "+00:00";
 --
 -- Database: `guru`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `about_us`
+--
+
+CREATE TABLE IF NOT EXISTS `about_us` (
+  `code` varchar(50) NOT NULL,
+  `text` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `about_us`
+--
+
+INSERT INTO `about_us` (`code`, `text`) VALUES
+('TENTANG_KAMI', '.....');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `comment`
+--
+
+CREATE TABLE IF NOT EXISTS `comment` (
+`code` int(50) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `date` varchar(50) NOT NULL,
+  `comment` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `comment`
+--
+
+INSERT INTO `comment` (`code`, `name`, `date`, `comment`) VALUES
+(2, 'Nama 1', '24-08-2018', 'Komentar 1');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `contact`
+--
+
+CREATE TABLE IF NOT EXISTS `contact` (
+  `code` varchar(50) NOT NULL,
+  `text` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `contact`
+--
+
+INSERT INTO `contact` (`code`, `text`) VALUES
+('KONTAK_KAMI', '.....');
 
 -- --------------------------------------------------------
 
@@ -46,6 +102,46 @@ INSERT INTO `e_book` (`code`, `class`, `subject`, `publisher`, `description`, `f
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `help`
+--
+
+CREATE TABLE IF NOT EXISTS `help` (
+  `code` varchar(50) NOT NULL,
+  `text` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `help`
+--
+
+INSERT INTO `help` (`code`, `text`) VALUES
+('HELP', '.....');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `info`
+--
+
+CREATE TABLE IF NOT EXISTS `info` (
+  `code` varchar(50) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `phone` varchar(250) NOT NULL,
+  `facebook` text NOT NULL,
+  `twitter` text NOT NULL,
+  `instagram` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `info`
+--
+
+INSERT INTO `info` (`code`, `email`, `phone`, `facebook`, `twitter`, `instagram`) VALUES
+('INFO', 'admin@guru.com', 'XXXX XXX XXXX', 'https://', 'https://', 'https://');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `learning_level`
 --
 
@@ -67,6 +163,47 @@ INSERT INTO `learning_level` (`code`, `name`, `class`, `age`, `description`, `im
 ('2-SMP', 'Sekolah Menengah Pertama (SMP)', 'Kelas 7 - 9', 'Umur 13 - 15 Tahun', 'Sekolah Menengah Pertama (SMP)', '1533968775.png'),
 ('3-SMA', 'Sekolah Menengah Atas (SMA)', 'Kelas 10 - 12', 'Umur 16 - 18 Tahun', 'Sekolah Menengah Atas (SMA)', '1533968782.png'),
 ('4-SMK', 'Sekolah Menengah Kejuruan (SMK)', 'Kelas 10 - 12', 'Umur 16 - 18 Tahun', 'Sekolah Menengah Kejuruan (SMK)', '1533968787.png');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `learning_level_menu`
+--
+
+CREATE TABLE IF NOT EXISTS `learning_level_menu` (
+  `code` varchar(50) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `img` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `learning_level_menu`
+--
+
+INSERT INTO `learning_level_menu` (`code`, `name`, `img`) VALUES
+('1-UMUM', 'Umum', '1535075649.png'),
+('2-STAN', 'STAN', '1535075703.png'),
+('3-KEJURUSAN', 'Kejurusan', '1535075738.png'),
+('4-UJIAN-PTN', 'Ujian PTN', '1535075761.png');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `logo`
+--
+
+CREATE TABLE IF NOT EXISTS `logo` (
+  `code` varchar(50) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `img` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `logo`
+--
+
+INSERT INTO `logo` (`code`, `name`, `img`) VALUES
+('LOGO', 'Guru', '1535074094.ico');
 
 -- --------------------------------------------------------
 
@@ -116,6 +253,27 @@ CREATE TABLE IF NOT EXISTS `quiz` (
 INSERT INTO `quiz` (`code`, `class`, `subject`, `question`, `answer`, `option_a`, `option_b`, `option_c`, `option_d`, `option_e`, `video`) VALUES
 ('AGAMA_ISLAM_SD_ERLANGGA_KUIS_PERTANYAAN_1', 'Sekolah Dasar (SD)', 'Agama Islam', 'Pertanyaan 1', 'A', 'Opsi A', 'Opsi B', 'Opsi C', '', '', '1534005029.mp4'),
 ('AGAMA_ISLAM_SD_ERLANGGA_KUIS_PERTANYAAN_2', 'Sekolah Dasar (SD)', 'Agama Islam', 'Pertanyaan 2', 'B', 'Opsi A', 'Opsi B', 'Opsi C', 'Opsi D', 'Opsi E', '1534005029.mp4');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `sponsor`
+--
+
+CREATE TABLE IF NOT EXISTS `sponsor` (
+`code` int(50) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `description` text NOT NULL,
+  `img` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `sponsor`
+--
+
+INSERT INTO `sponsor` (`code`, `name`, `description`, `img`) VALUES
+(2, 'Sponsor 1', 'Deskripsi Sponsor 1', '1535095988.jpg'),
+(3, 'Sponsor 2', 'Deskripsi Sponsor 2', '1535096015.jpg');
 
 -- --------------------------------------------------------
 
@@ -192,6 +350,7 @@ CREATE TABLE IF NOT EXISTS `user_access` (
 
 INSERT INTO `user_access` (`code`, `email`, `password`, `name`, `status`, `phone_number`, `facebook`, `twitter`, `instagram`) VALUES
 ('1534067468', 'ocky.aditia@gmail.com', 'QcDyeQS0E6qEoYCSSoXDwRutwirqLKORqjOk3WyNds3yTxbNOr9DPjn1QzrpfwsbzhMX6Ou4mvEsFn1cSX0Vbcsi2O+s+RXNW/588VxMOUrNvaHXVYFob6Up1HC+aKVbcvN+t5Zv9YEbPQ7V9HkAd7eXXAO63/TYf972C2hxPno=', 'Ocky Aditia Saputra', 'Pelajar', '+6281288104708', 'https://www.facebook.com/ocky.aditia', 'https://twitter.com/ockyaditia', 'https://www.instagram.com/ockyaditia/'),
+('2062299767126954', 'undefined', '', 'Ocky Aditia', 'Pelajar', '', '', NULL, NULL),
 ('ADMIN', 'admin@guru.com', 'KQ2cwGcWIGA8IoOemDG3Iaj3iVsRHjuqcdIg8CyRAw4OHS3GqDglOQEbyXgp3pqImKOyECh1PlAqFXTm++qiG39RHqpjlgEqoVWjQaN1vzE5P6Hq7yjXEHkcAcdZKaS1f8go+vaiozvWPkd1qLgLFnz00KrYb1vbu/8iAjM0ky4=', 'Admin', 'Admin', '+6281288104708', '', '', '');
 
 -- --------------------------------------------------------
@@ -221,15 +380,57 @@ INSERT INTO `video` (`code`, `class`, `subject`, `publisher`, `description`, `fi
 --
 
 --
+-- Indexes for table `about_us`
+--
+ALTER TABLE `about_us`
+ ADD PRIMARY KEY (`code`);
+
+--
+-- Indexes for table `comment`
+--
+ALTER TABLE `comment`
+ ADD PRIMARY KEY (`code`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+ ADD PRIMARY KEY (`code`);
+
+--
 -- Indexes for table `e_book`
 --
 ALTER TABLE `e_book`
  ADD PRIMARY KEY (`code`);
 
 --
+-- Indexes for table `help`
+--
+ALTER TABLE `help`
+ ADD PRIMARY KEY (`code`);
+
+--
+-- Indexes for table `info`
+--
+ALTER TABLE `info`
+ ADD PRIMARY KEY (`code`);
+
+--
 -- Indexes for table `learning_level`
 --
 ALTER TABLE `learning_level`
+ ADD PRIMARY KEY (`code`);
+
+--
+-- Indexes for table `learning_level_menu`
+--
+ALTER TABLE `learning_level_menu`
+ ADD PRIMARY KEY (`code`);
+
+--
+-- Indexes for table `logo`
+--
+ALTER TABLE `logo`
  ADD PRIMARY KEY (`code`);
 
 --
@@ -242,6 +443,12 @@ ALTER TABLE `payment`
 -- Indexes for table `quiz`
 --
 ALTER TABLE `quiz`
+ ADD PRIMARY KEY (`code`);
+
+--
+-- Indexes for table `sponsor`
+--
+ALTER TABLE `sponsor`
  ADD PRIMARY KEY (`code`);
 
 --
@@ -272,6 +479,16 @@ ALTER TABLE `video`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `comment`
+--
+ALTER TABLE `comment`
+MODIFY `code` int(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `sponsor`
+--
+ALTER TABLE `sponsor`
+MODIFY `code` int(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `transactions`
 --
