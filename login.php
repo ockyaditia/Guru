@@ -121,11 +121,11 @@
 							<br>
 							<div class="row">
 								<div class="col">
-									<a id="google-click" href="#" class="btn_login w-100 google">
+									<a id="google-click" style="visibility:hidden;" href="#" class="btn_login w-100 google">
 										<i class="fa fa-google fa-fw"></i> Masuk dengan Google
 									</a>
 									<script>startApp();</script>
-									<a href="#" onclick="javascript:login();" class="btn_login w-100 fb">
+									<a style="visibility:hidden;" href="#" onclick="javascript:login();" class="btn_login w-100 fb">
 										<i class="fa fa-facebook fa-fw"></i> Masuk dengan Facebook
 									</a>
 									<a style="visibility:hidden;" href="#" class="btn_login w-100 twitter">
