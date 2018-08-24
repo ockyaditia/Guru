@@ -52,10 +52,29 @@
     <!-- The above 4 meta tags *Must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Guru - Pendidikan Cerdas</title>
+	
+	<?php
+		require ("config/config.php");
+		$sql = "SELECT * FROM logo";
+		if (!$result = $mysqli->query($sql)) {
+			$message = "Error.";
+			echo "<script type='text/javascript'>alert('$message');</script>";
+			exit;
+		}
+		
+		$logo_name = "";
+		$logo_img = "";
+		
+		while ($data = $result->fetch_assoc()) {
+			$logo_name = $data['name'];
+			$logo_img = $data['img'];
+		}
+	?>
+	
+    <title><?php echo $logo_name; ?></title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="img/core-img/<?php echo $logo_img; ?>">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">

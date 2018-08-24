@@ -31,7 +31,7 @@
 		if (isset($_GET['success']) && $_GET['success'] == 1) {
 	?>
 		<div class="alert alert-success" role="alert">
-			<center><strong>Berhasil Masuk, Selamat Datang di Guru.</strong></center>
+			<center><strong>Berhasil Masuk, Selamat Datang di <?php echo $logo_name; ?>.</strong></center>
 		</div>
 	<?php
 		}
@@ -92,7 +92,7 @@
                 <div class="col-12">
                     <!-- Hero Content -->
                     <div class="hero-content text-center">
-                        <h2>Ayo Belajar Bersama Guru</h2>
+                        <h2>Ayo Belajar Bersama <?php echo $logo_name; ?></h2>
                         <a href="online-learn.php" class="btn clever-btn">Ayo Belajar</a>
                     </div>
                 </div>
@@ -334,7 +334,7 @@
 
         <div class="register-now-countdown mb-100 wow fadeInUp" data-wow-delay="500ms">
             <h3>Daftar Sekarang</h3>
-            <p>Belajar online bersama kami di Guru.</p>
+            <p>Belajar online bersama kami di <?php echo $logo_name; ?>.</p>
 			<br>
 			<h5><i>#LearnIsEasy</i></h5>
 			<p>Memahami materi pelajaran jadi lebih mudah dengan materi dan video menarik yang bisa kamu pelajari. Ribuan video belajar tersedia buat kamu.</p>

@@ -4,7 +4,7 @@
                     <div class="col-12">
                         <!-- Footer Logo -->
                         <div class="footer-logo">
-                            <a href="index.php"><img src="img/core-img/guru.png" width="96" height="15" alt=""></a>
+                            <a href="index.php" style="text-transform: uppercase; color:#0aa9c5; letter-spacing: 3px; font-weight: bold; font-size:24pt" ><?php echo $logo_name; ?></a>
                         </div>
 						<br>
 						<br>

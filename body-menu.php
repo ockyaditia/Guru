@@ -4,7 +4,7 @@
                 <nav class="classy-navbar justify-content-between" id="cleverNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="index.php"><img src="img/core-img/guru.png" width="96" height="15" alt=""></a>
+                    <a class="nav-brand" href="index.php" style="text-transform: uppercase; color:#0aa9c5; letter-spacing: 3px; font-weight: bold; font-size:24pt" ><?php echo $logo_name; ?></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -26,8 +26,21 @@
 								<?php
 									if (isset($email) && isset($status) && $status == "Admin") {
 								?>
+                                <li><a href="#">Kelola Menu</a>
+                                    <ul class="dropdown">
+                                        <li><a href="admin-data-logo.php">Nama dan Logo Web</a></li>
+                                        <li><a href="admin-data-menu.php">Belajar Online</a></li>
+                                    </ul>
+                                </li>
+								<?php
+									}
+								?>
+								<?php
+									if (isset($email) && isset($status) && $status == "Admin") {
+								?>
                                 <li><a href="#">Kelola Data</a>
                                     <ul class="dropdown">
+                                        <li><a href="admin-data-menu.php">Kelola Menu</a></li>
                                         <li><a href="admin-data-user.php">Data Pengguna</a></li>
                                         <li><a href="admin-data-learning-level.php">Data Jenjang Belajar</a></li>
                                         <li><a href="admin-data-subjects.php">Data Mata Pelajaran</a></li>
