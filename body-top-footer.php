@@ -18,7 +18,7 @@
 									<th style="width:15%;">Lainnya</th>
 									<tr>
 										<td><p><a href="about-us.php">Tentang Kami</a></p></td>
-										<td><p><a href="#">Belajar Online</a></p></td>
+										<td><p><a href="online-learn-menu.php">Belajar Online</a></p></td>
 										<td><p><a href="online-learn.php">Umum</a></p></td>
 										<td><p><a href="online-learn-category.php?category=Sekolah Dasar (SD)">Sekolah Dasar (SD)</a></p></td>
 										<td><p><a href="blog.php">Blog</a></p></td>

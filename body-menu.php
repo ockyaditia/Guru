@@ -26,10 +26,10 @@
 								<?php
 									if (isset($email) && isset($status) && $status == "Admin") {
 								?>
-                                <li><a href="#">Kelola Menu</a>
+                                <li><a href="#">Kelola Web</a>
                                     <ul class="dropdown">
                                         <li><a href="admin-data-logo.php">Nama dan Logo Web</a></li>
-                                        <li><a href="admin-data-menu.php">Belajar Online</a></li>
+                                        <li><a href="admin-data-learning-level-menu.php">Menu Belajar Online</a></li>
                                     </ul>
                                 </li>
 								<?php
@@ -40,7 +40,6 @@
 								?>
                                 <li><a href="#">Kelola Data</a>
                                     <ul class="dropdown">
-                                        <li><a href="admin-data-menu.php">Kelola Menu</a></li>
                                         <li><a href="admin-data-user.php">Data Pengguna</a></li>
                                         <li><a href="admin-data-learning-level.php">Data Jenjang Belajar</a></li>
                                         <li><a href="admin-data-subjects.php">Data Mata Pelajaran</a></li>
@@ -56,7 +55,7 @@
 								?>
                                 <li><a href="#">Produk Kami</a>
                                     <ul class="dropdown">
-                                        <li><a href="#">Belajar Online</a>
+                                        <li><a href="online-learn-menu.php">Belajar Online</a>
 											<ul class="dropdown">
 												<li><a href="online-learn.php">Umum</a></li>
 												<li><a href="#">STAN</a></li>
