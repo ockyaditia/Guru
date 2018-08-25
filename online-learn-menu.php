@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading">
-                        <h3 style="background-color:#FFFF00;"><i>#LearnIsEasy</i></h3>
+                        <h3 style="background-color:#FFFF00;"><i>#LearnIsGrace</i></h3>
 						<br>
                         <h6>Tingkatan jenjang pembelajaran yang bisa kamu pilih sesuai jenjang kamu.</h6>
                     </div>

@@ -182,7 +182,7 @@
                                                         </div>-->
                                                         <div class="instructor-info">
                                                             <h5>Belajar Online</h5>
-															<span style="background-color:#FFFF00; font-weight:bold;"><i>#LearnIsEasy</i></span>
+															<span style="background-color:#FFFF00; font-weight:bold;"><i>#LearnIsGrace</i></span>
 															<br>
 															<span>Tingkatan jenjang pembelajaran yang bisa kamu pilih sesuai jenjang kamu.</span>
                                                         </div>
