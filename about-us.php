@@ -66,9 +66,23 @@
         </nav>
     </div>
     <!-- ##### Breadcumb Area End ##### -->
+	
+	<?php
+		$sql = "SELECT * FROM background WHERE code='ABOUT_US'";
+		
+		if (!$result = $mysqli->query($sql)) {
+			$message = "Error.";
+			echo "<script type='text/javascript'>alert('$message');</script>";
+		}
+	
+		while ($data = $result->fetch_assoc()) {
+			$code_background = $data['code'];
+			$img = $data['img'];
+		}
+	?>
 
     <!-- ##### Single Course Intro Start ##### -->
-    <div class="single-course-intro d-flex align-items-center justify-content-center" style="background-image: url(img/bg-img/bg1.jpg);">
+    <div id="background_image_change" class="single-course-intro d-flex align-items-center justify-content-center" style="background-image: url(img/bg-img/<?php echo $img; ?>);">
         <!-- Content -->
         <div class="single-course-intro-content text-center">
             <!-- Ratings -->
@@ -88,6 +102,28 @@
                 <a href="<?php echo $twitter_info; ?>">Twitter</a>
             </div>
             <!--<div class="price">Beri Bintang</div>-->
+			<?php
+				if (isset($email) && isset($status) && $status == "Admin") {
+			?>
+				<br>
+				<br>
+				<form action="query/admin-update-data-background.php" method="post" enctype="multipart/form-data">
+					<input type="hidden" id="code" name="code" value="<?php echo $code_background; ?>" required>
+					<label class="clever-btn reg"> Pilih Gambar
+						<input type="file" id="img" name="img" accept="image/*" onchange="loadFileBackground(event)" style="display: none;">
+					</label>
+					<button class="clever-btn w-100 reg">Ubah</button>
+				</form>
+				<script>
+					var loadFileBackground = function(event) {
+						var output = document.getElementById('background_image_change');
+						var file = event.target.files[0];
+						output.style.backgroundImage = "url(img/bg-img/" + file.name + ")";
+					};
+				</script>
+			<?php
+				}
+			?>
         </div>
     </div>
     <!-- ##### Single Course Intro End ##### -->

@@ -26,15 +26,51 @@
 		?>
     </header>
     <!-- ##### Header Area End ##### -->
+	
+	<?php
+		$sql = "SELECT * FROM background WHERE code='VIRTUAL_CLASS'";
+		
+		if (!$result = $mysqli->query($sql)) {
+			$message = "Error.";
+			echo "<script type='text/javascript'>alert('$message');</script>";
+		}
+	
+		while ($data = $result->fetch_assoc()) {
+			$code_background = $data['code'];
+			$img = $data['img'];
+		}
+	?>
 
     <!-- ##### Hero Area Start ##### -->
-    <section class="hero-area bg-img bg-overlay-2by5" style="background-image: url(img/bg-img/c4.jpg);">
+    <section id="background_image_change" class="hero-area bg-img bg-overlay-2by5" style="background-image: url(img/bg-img/<?php echo $img; ?>);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <!-- Hero Content -->
                     <div class="hero-content text-center">
                         <h2>Kelas Virtual</h2>
+						<?php
+							if (isset($email) && isset($status) && $status == "Admin") {
+						?>
+							<br>
+							<br>
+							<form action="query/admin-update-data-background.php" method="post" enctype="multipart/form-data">
+								<input type="hidden" id="code" name="code" value="<?php echo $code_background; ?>" required>
+								<label class="clever-btn reg"> Pilih Gambar
+									<input type="file" id="img" name="img" accept="image/*" onchange="loadFileBackground(event)" style="display: none;">
+								</label>
+								<button class="clever-btn w-100 reg">Ubah</button>
+							</form>
+							<script>
+								var loadFileBackground = function(event) {
+									var output = document.getElementById('background_image_change');
+									var file = event.target.files[0];
+									output.style.backgroundImage = "url(img/bg-img/" + file.name + ")";
+								};
+							</script>
+						<?php
+							}
+						?>
                     </div>
                 </div>
             </div>

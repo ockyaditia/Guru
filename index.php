@@ -28,7 +28,13 @@
     <!-- ##### Header Area End ##### -->
 	
 	<?php
-		if (isset($_GET['success']) && $_GET['success'] == 1) {
+		if (isset($_GET['fail'])) {
+	?>
+		<div class="alert alert-danger" role="alert">
+			<center><strong>Gagal</strong>. Cek Kembali Data!.</center>
+		</div>
+	<?php
+		} else if (isset($_GET['success']) && $_GET['success'] == 1) {
 	?>
 		<div class="alert alert-success" role="alert">
 			<center><strong>Berhasil Masuk, Selamat Datang di <?php echo $logo_name; ?>.</strong></center>
@@ -83,9 +89,23 @@
 			echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 	?>
+	
+	<?php
+		$sql = "SELECT * FROM background WHERE code='HOME'";
+		
+		if (!$result = $mysqli->query($sql)) {
+			$message = "Error.";
+			echo "<script type='text/javascript'>alert('$message');</script>";
+		}
+	
+		while ($data = $result->fetch_assoc()) {
+			$code_background = $data['code'];
+			$img = $data['img'];
+		}
+	?>
 
     <!-- ##### Hero Area Start ##### -->
-    <section class="hero-area bg-img bg-overlay-2by5" style="background-image: url(img/bg-img/bg1.jpg);">
+    <section id="background_image_change" class="hero-area bg-img bg-overlay-2by5" style="background-image: url(img/bg-img/<?php echo $img; ?>);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -93,6 +113,28 @@
                     <div class="hero-content text-center">
                         <h2>Ayo Belajar Bersama <?php echo $logo_name; ?></h2>
                         <a href="online-learn.php" class="btn clever-btn">Ayo Belajar</a>
+						<?php
+							if (isset($email) && isset($status) && $status == "Admin") {
+						?>
+							<br>
+							<br>
+							<form action="query/admin-update-data-background.php" method="post" enctype="multipart/form-data">
+								<input type="hidden" id="code" name="code" value="<?php echo $code_background; ?>" required>
+								<label class="clever-btn reg"> Pilih Gambar
+									<input type="file" id="img" name="img" accept="image/*" onchange="loadFileBackground(event)" style="display: none;">
+								</label>
+								<button class="clever-btn w-100 reg">Ubah</button>
+							</form>
+							<script>
+								var loadFileBackground = function(event) {
+									var output = document.getElementById('background_image_change');
+									var file = event.target.files[0];
+									output.style.backgroundImage = "url(img/bg-img/" + file.name + ")";
+								};
+							</script>
+						<?php
+							}
+						?>
                     </div>
                 </div>
             </div>
@@ -476,7 +518,7 @@
 						<div class="row">
 							<div class="col-12">
 								<br>
-								<div class="blog-catagories mb-70 d-flex flex-wrap justify-content-between">
+								<div class="blog-catagories mb-70 d-flex flex-wrap justify-content-between" style="margin: auto; width: 15%;">
 
 									<!-- Single Catagories -->
 									<div class="single-catagories bg-img" style="background-image: url(img/bg-img/bc1.jpg);">
@@ -485,40 +527,35 @@
 										</a>
 									</div>
 
-									<!-- Single Catagories -->
-									<div class="single-catagories bg-img" style="background-image: url(img/bg-img/bc2.jpg);">
+									<!--<div class="single-catagories bg-img" style="background-image: url(img/bg-img/bc2.jpg);">
 										<a href="#">
 											<h6>Konsep Pelajaran</h6>
 										</a>
 									</div>
 
-									<!-- Single Catagories -->
 									<div class="single-catagories bg-img" style="background-image: url(img/bg-img/bc3.jpg);">
 										<a href="#">
 											<h6>Ujian Nasional</h6>
 										</a>
 									</div>
 
-									<!-- Single Catagories -->
 									<div class="single-catagories bg-img" style="background-image: url(img/bg-img/bc4.jpg);">
 										<a href="#">
 											<h6>SBMPTN</h6>
 										</a>
 									</div>
 
-									<!-- Single Catagories -->
 									<div class="single-catagories bg-img" style="background-image: url(img/bg-img/bc5.jpg);">
 										<a href="#">
 											<h6>Siap Kuliah</h6>
 										</a>
 									</div>
 
-									<!-- Single Catagories -->
 									<div class="single-catagories bg-img" style="background-image: url(img/bg-img/bc6.jpg);">
 										<a href="#">
 											<h6>Tips Belajar</h6>
 										</a>
-									</div>
+									</div>-->
 								</div>
 							</div>
 						</div>

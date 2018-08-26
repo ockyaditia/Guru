@@ -49,9 +49,23 @@
 			$file_name = $data['file_name'];
 		}
 	?>
+	
+	<?php
+		$sql_background = "SELECT * FROM background WHERE code='ONLINE_LEARN'";
+		
+		if (!$result_background = $mysqli->query($sql_background)) {
+			$message = "Error.";
+			echo "<script type='text/javascript'>alert('$message');</script>";
+		}
+	
+		while ($data_background = $result_background->fetch_assoc()) {
+			$code_background = $data_background['code'];
+			$img = $data_background['img'];
+		}
+	?>
 
     <!-- ##### Catagory ##### -->
-    <div class="clever-catagory bg-img d-flex align-items-center justify-content-center p-3" style="background-image: url(img/bg-img/bg4.jpg);">
+    <div class="clever-catagory bg-img d-flex align-items-center justify-content-center p-3" style="background-image: url(img/bg-img/<?php echo $img; ?>);">
         <h3>Video Pembelajaran</h3>
     </div>
 
