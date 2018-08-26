@@ -265,62 +265,98 @@
                                                 </div>
                                             </div>
                                         </div>
+										
+										<?php
+											if (isset($email) && isset($status) && $status == "Admin") {
+										?>
+                                        <div class="clever-faqs">
+                                            <h4>Tambah Tanya Jawab</h4>
+											<form action="query/admin-add-data-question.php" method="post" enctype="multipart/form-data">
+												<div class="row">
+													<div class="col-12">
+														<div class="form-group">
+															<input type="text" class="form-control" id="question" name="question" placeholder="Pertanyaan" required>
+														</div>
+													</div>
+													<div class="col-12">
+														<div class="form-group">
+															<textarea rows="10" cols="50" class="form-control" id="answer" name="answer" placeholder="Jawaban" required></textarea>
+														</div>
+													</div>
+													<div class="col-12">
+														<button class="btn clever-btn w-100">Tambah</button>
+													</div>
+												</div>
+											</form>
+                                        </div>
+										<?php
+											}
+										?>
 
                                         <!-- FAQ -->
                                         <div class="clever-faqs">
                                             <h4>Tanya Jawab</h4>
 
                                             <div class="accordions" id="accordion" role="tablist" aria-multiselectable="true">
-
-                                                <!-- Single Accordian Area -->
+											
+												<?php
+													$sql_data = "SELECT * FROM question";
+											
+													if (!$result_data = $mysqli->query($sql_data)) {
+														$message = "Error.";
+														echo "<script type='text/javascript'>alert('$message');</script>";
+													}
+													
+													while ($data = $result_data->fetch_assoc()) {
+														$code = $data['code'];
+														$question = $data['question'];
+														$answer = $data['answer'];
+														
+														if (isset($email) && isset($status) && $status == "Admin") {
+												?>
+												
+												<!-- Single Accordian Area -->
                                                 <div class="panel single-accordion">
-                                                    <h6><a role="button" class="" aria-expanded="true" aria-controls="collapseOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Pertanyaan
-                                                    <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                                    <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                    </a></h6>
-                                                    <div id="collapseOne" class="accordion-content collapse show">
-                                                        <p>....................</p>
-                                                    </div>
+													<form action="query/admin-update-data-question.php" method="post" enctype="multipart/form-data">
+														<input type="hidden" id="code_old" name="code_old" value="<?php echo $code; ?>" required>
+														<h6>
+															<a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseTwo<?php echo $code; ?>" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo<?php echo $code; ?>">
+															<input type="text" class="form-control" id="question" name="question" placeholder="Pertanyaan" value="<?php echo $question; ?>" required>
+															<span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+															<span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+															</a>
+														</h6>
+														<div id="collapseTwo<?php echo $code; ?>" class="accordion-content collapse">
+															<textarea rows="5" cols="50" class="form-control" id="answer" name="answer" placeholder="Jawaban" required><?php echo $answer; ?></textarea>
+															</p>
+														</div>
+														<button class="btn clever-btn w-100">Ubah</button>
+														<a class="btn clever-btn w-100" style="margin: 5px 0;" href="query/admin-remove-data-question.php?remove=<?php echo $code; ?>">Hapus</a>
+													</form>
                                                 </div>
+												
+												<?php
+														} else {
+												?>
 
                                                 <!-- Single Accordian Area -->
                                                 <div class="panel single-accordion">
                                                     <h6>
-                                                        <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseTwo" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo">Pertanyaan
+                                                        <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseTwo" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo"><?php echo $question; ?>
                                                         <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                                         <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
                                                         </a>
                                                     </h6>
                                                     <div id="collapseTwo" class="accordion-content collapse">
-                                                        <p>....................</p>
+                                                        <p><?php echo $answer; ?></p>
                                                     </div>
                                                 </div>
-
-                                                <!-- Single Accordian Area -->
-                                                <div class="panel single-accordion">
-                                                    <h6>
-                                                        <a role="button" aria-expanded="true" aria-controls="collapseThree" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseThree">Pertanyaan
-                                                        <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                                        <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                        </a>
-                                                    </h6>
-                                                    <div id="collapseThree" class="accordion-content collapse">
-                                                        <p>....................</p>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Single Accordian Area -->
-                                                <div class="panel single-accordion">
-                                                    <h6>
-                                                        <a role="button" aria-expanded="true" aria-controls="collapseFour" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseFour">Pertanyaan
-                                                        <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                                        <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                        </a>
-                                                    </h6>
-                                                    <div id="collapseFour" class="accordion-content collapse">
-                                                        <p>....................</p>
-                                                    </div>
-                                                </div>
+												
+												<?php
+														}
+													}
+												?>
+												
                                             </div>
 
                                         </div>
