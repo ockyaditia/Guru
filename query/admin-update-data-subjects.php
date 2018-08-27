@@ -10,6 +10,7 @@
 	$description = $_POST['description'];
 	$seat = $_POST['seat'];
 	$price = $_POST['price'];
+	$time = $_POST['time'];
 	
 	$location = "location:../admin-update-data-subjects.php?fail-message=";
 	
@@ -24,7 +25,8 @@
 				category='$category',
 				description='$description',
 				seat='$seat',
-				price='$price'
+				price='$price',
+				time='$time'
 				WHERE code='$code_old'";
 	} else {
 		// Perform an SQL query
@@ -36,6 +38,7 @@
 				description='$description',
 				seat='$seat',
 				price='$price',
+				time='$time',
 				img='$newfilename'
 				WHERE code='$code_old'";
 	}

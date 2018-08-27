@@ -49,6 +49,26 @@
     background: #3762f0;
     display: inline-block;
 }
+#clockdiv-result {
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 18px;
+}
+#clockdiv-result > div {
+    padding: 10px;
+    border-radius: 3px;
+    background: #0aa9c5;
+    display: inline-block;
+}
+#clockdiv-result div > span {
+    padding: 15px;
+    border-radius: 3px;
+    background: #3762f0;
+    display: inline-block;
+}
 .smalltext {
     padding-top: 5px;
     font-size: 12px;

@@ -30,6 +30,15 @@ function initializeClock(id, endtime) {
 
     if (t.total <= 0) {
       clearInterval(timeinterval);
+	  var submitButton = document.getElementById("submit");
+	  var resultTimedOut = document.getElementById("result-timed-out");
+	  var tryAgainButton = document.getElementById("try-again");
+	  submitButton.click();
+      submitButton.style.visibility = "hidden";
+	  
+      resultTimedOut.style.display = "inline-block";
+	  
+      tryAgainButton.style.display = "inline-block";
     }
   }
 
@@ -37,5 +46,6 @@ function initializeClock(id, endtime) {
   var timeinterval = setInterval(updateClock, 1000);
 }
 
-var deadline = new Date(Date.parse(new Date()) + 1 * 60 * 60 * 1000);
+var timer = document.getElementById("timer").innerHTML;
+var deadline = new Date(Date.parse(new Date()) + timer * 60 * 60 * 1000);
 initializeClock('clockdiv', deadline);

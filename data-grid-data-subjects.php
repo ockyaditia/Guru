@@ -37,6 +37,7 @@
 					$description = $data['description'];
 					$seat = $data['seat'];
 					$price = $data['price'];
+					$time = $data['time'];
 					$img = $data['img'];
 			?>
 			<tr id="<?php echo $code; ?>">
@@ -46,6 +47,7 @@
 				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $description; ?></div></td>
 				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $seat; ?></div></td>
 				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $price; ?></div></td>
+				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $time; ?></div></td>
 				<td><div style="width: 140px; word-wrap: break-word;"><img src="img/bg-img/<?php echo $img; ?>" alt="<?php echo $name; ?>" width="200px" height="100px"></div></td>
 				<td></td>
 			</tr>

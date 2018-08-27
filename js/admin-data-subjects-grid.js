@@ -49,6 +49,7 @@ EditableGrid.prototype.initializeGrid = function()
 		setHeaderRenderer("seat", new InfoHeaderRenderer("Jumlah"));
 		setHeaderRenderer("price", new InfoHeaderRenderer("Harga"));
 		setHeaderRenderer("img", new InfoHeaderRenderer("Gambar"));
+		setHeaderRenderer("time", new InfoHeaderRenderer("Waktu"));
 
 		// register the function that will handle model changes
 		modelChanged = function(rowIndex, columnIndex, oldValue, newValue, row) { 
@@ -135,6 +136,7 @@ EditableGrid.prototype.onloadHTML = function(tableId)
 	                       { name: "seat", datatype: "html", editable: false },
 	                       { name: "price", datatype: "html", editable: false },
 	                       { name: "img", datatype: "html", editable: false },
+	                       { name: "time", datatype: "html", editable: false },
 	                       { name: "action", datatype: "html", editable: false }
 	                       ]});
 

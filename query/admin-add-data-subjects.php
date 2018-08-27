@@ -9,14 +9,15 @@
 	$description = $_POST['description'];
 	$seat = $_POST['seat'];
 	$price = $_POST['price'];
+	$time = $_POST['time'];
 	
 	$location = "location:../admin-add-data-subjects.php?fail-message=";
 	
 	include 'upload.php';
 	
 	// Perform an SQL query
-	$sql = "INSERT INTO subjects(code, name, class, category, description, seat, price, img)
-			values('$code', '$name', '$class', '$category', '$description', '$seat', '$price', '$newfilename')";
+	$sql = "INSERT INTO subjects(code, name, class, category, description, seat, price, time, img)
+			values('$code', '$name', '$class', '$category', '$description', '$seat', '$price', '$time', '$newfilename')";
 
 	if (!$result = $mysqli->query($sql)) {
 		// Oh no! The query failed. 

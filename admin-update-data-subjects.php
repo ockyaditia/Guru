@@ -88,6 +88,7 @@
 				$description = $data['description'];
 				$seat = $data['seat'];
 				$price = $data['price'];
+				$time = $data['time'];
 				$img = $data['img'];
 			}
 		}
@@ -162,6 +163,11 @@
 									<div class="col-12">
                                         <div class="form-group">
                                             <input type="number" class="form-control" id="price" name="price" placeholder="Harga" value="<?php echo $price; ?>" required>
+                                        </div>
+                                    </div>
+									<div class="col-12">
+                                        <div class="form-group">
+                                            <input type="number" class="form-control" id="time" name="time" placeholder="Waktu Kuis (Dalam Detik)" value="<?php echo $time; ?>" required>
                                         </div>
                                     </div>
                                     <div class="col-12">

@@ -79,6 +79,26 @@
 		quiz_container.style.paddingBottom = "720px";
       }
     });
+    
+	submitButton.style.visibility = "hidden";
+	tryAgainButton.style.display = "inline-block";
+	clockdiv.style.display = "none";
+	clockdivResult.style.display = "inline-block";
+	
+	var daysSpan = clockdiv.querySelector('.days').innerHTML;
+	var hoursSpan = clockdiv.querySelector('.hours').innerHTML;
+	var minutesSpan = clockdiv.querySelector('.minutes').innerHTML;
+	var secondsSpan = clockdiv.querySelector('.seconds').innerHTML;
+	
+	var daysSpanResult = clockdivResult.querySelector('.days-result');
+	var hoursSpanResult = clockdivResult.querySelector('.hours-result');
+	var minutesSpanResult = clockdivResult.querySelector('.minutes-result');
+	var secondsSpanResult = clockdivResult.querySelector('.seconds-result');
+	  
+	daysSpanResult.innerHTML = daysSpan;
+    hoursSpanResult.innerHTML = ('0' + hoursSpan).slice(-2);
+    minutesSpanResult.innerHTML = ('0' + minutesSpan).slice(-2);
+    secondsSpanResult.innerHTML = ('0' + secondsSpan).slice(-2);
 
     // show number of correct answers out of total
     resultsContainer.innerHTML = `<h6><br> Benar\t: ${numCorrect} <br> Salah\t: ${questions.length-numCorrect}</h6>`;
@@ -98,9 +118,11 @@
     if (currentSlide === slides.length - 1) {
       nextButton.style.display = "none";
       submitButton.style.display = "inline-block";
+	  tryAgainButton.style.display = "inline-block";
     } else {
       nextButton.style.display = "inline-block";
       submitButton.style.display = "none";
+	  tryAgainButton.style.display = "none";
     }
   }
 
@@ -115,6 +137,9 @@
   const quizContainer = document.getElementById("quiz");
   const resultsContainer = document.getElementById("results");
   const submitButton = document.getElementById("submit");
+  const tryAgainButton = document.getElementById("try-again");
+  const clockdiv = document.getElementById("clockdiv");
+  const clockdivResult = document.getElementById("clockdiv-result");
 
   // display quiz right away
   buildQuiz();

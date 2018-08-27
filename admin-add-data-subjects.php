@@ -133,6 +133,11 @@
                                             <input type="number" class="form-control" id="price" name="price" placeholder="Harga" required>
                                         </div>
                                     </div>
+									<div class="col-12">
+                                        <div class="form-group">
+                                            <input type="number" class="form-control" id="time" name="time" placeholder="Waktu Kuis (Dalam Detik)" required>
+                                        </div>
+                                    </div>
                                     <div class="col-12">
                                         <div class="form-group">
 											<input type="file" class="form-control" id="img" name="img" accept="image/*" onchange="loadFile(event)">
