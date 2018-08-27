@@ -270,6 +270,7 @@
 								
 								while ($data = $result_data->fetch_assoc()) {
 									$code = $data['code'];
+									$subject_code = $data['subject_code'];
 									$name = $data['name'];
 									$date = $data['date'];
 									$email = $data['email'];
@@ -295,6 +296,13 @@
                                         </div>
                                     </div>
                                     <p><?php echo $comment; ?></p>
+									<?php
+										if (isset($email) && isset($status) && $status == "Admin") {
+									?>
+										<a class="btn clever-btn w-100" style="margin: 5px 0;" href="query/admin-remove-data-blog.php?subject_code=<?php echo $subject_code; ?>&remove=<?php echo $code; ?>">Hapus</a>
+									<?php
+										}
+									?>
                                 </div>
                             </li>
 							<?php
