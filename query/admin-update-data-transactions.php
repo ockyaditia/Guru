@@ -19,6 +19,6 @@
 		echo "Error Detail: " . $mysqli->error . "\n";
 		header('location:../admin-data-transactions.php?fail='.$mysqli->errno);
 	} else {
-		header('location:../admin-data-transactions.php?success=3');
+		header('location:../admin-data-transactions.php?success=2');
 	}
 ?>
