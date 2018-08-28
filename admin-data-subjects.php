@@ -120,7 +120,9 @@
 					
 						<!-- Grid contents -->
 						<div id="tablecontent"></div>
+						<div style="overflow:auto; white-space:nowrap;">
 						<!-- [DO NOT DEPLOY] --> <?php include("data-grid-data-subjects.php"); ?>	
+						</div>
 					
 						<!-- Paginator control -->
 						<div id="paginator"></div>

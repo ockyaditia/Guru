@@ -21,12 +21,12 @@
 						
 						if ($columnName != 'code') {
 				?>
-				<th><div style="width: 140px; word-wrap: break-word;"><?php echo strtoupper($columnName); ?></div></th>
+				<th><div><?php echo strtoupper($columnName); ?></div></th>
 				<?php
 						}
 					}
 				?>
-				<th></th>
+				<th>PILIHAN</th>
 			</tr>
 			<?php
 				while ($data = $result_data->fetch_assoc()) {
@@ -39,12 +39,12 @@
 					$img = $data['img'];
 			?>
 			<tr id="<?php echo $code; ?>">
-				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $class; ?></div></td>
-				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $subject; ?></div></td>
-				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $publisher; ?></div></td>
-				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $description; ?></div></td>
-				<td><div style="width: 140px; word-wrap: break-word;"><a href="pdf/<?php echo $file_name; ?>">E-Book <?php echo $subject; ?></a></div></td>
-				<td><div style="width: 140px; word-wrap: break-word;"><img src="img/bg-img/<?php echo $img; ?>" alt="<?php echo $subject; ?>" width="200px" height="100px"></div></td>
+				<td><div><?php echo $class; ?></div></td>
+				<td><div><?php echo $subject; ?></div></td>
+				<td><div><?php echo $publisher; ?></div></td>
+				<td><div><?php echo $description; ?></div></td>
+				<td><div><a href="pdf/<?php echo $file_name; ?>">E-Book <?php echo $subject; ?></a></div></td>
+				<td><div><img src="img/bg-img/<?php echo $img; ?>" alt="<?php echo $subject; ?>" width="200px" height="100px"></div></td>
 				<td></td>
 			</tr>
 			<?php

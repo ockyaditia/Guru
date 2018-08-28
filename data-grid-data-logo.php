@@ -26,7 +26,7 @@
 						}
 					}
 				?>
-				<th></th>
+				<th>PILIHAN</th>
 			</tr>
 			<?php
 				while ($data = $result_data->fetch_assoc()) {
@@ -35,8 +35,8 @@
 					$img = $data['img'];
 			?>
 			<tr id="<?php echo $code; ?>">
-				<td><div style="width: 200px; word-wrap: break-word;"><?php echo $name; ?></div></td>
-				<td><div style="width: 200px; word-wrap: break-word;"><img src="img/core-img/<?php echo $img; ?>" alt="<?php echo $name; ?>" width="200px" height="100px"></div></td>
+				<td><div><?php echo $name; ?></div></td>
+				<td><div><img src="img/core-img/<?php echo $img; ?>" alt="<?php echo $name; ?>" width="200px" height="100px"></div></td>
 				<td></td>
 			</tr>
 			<?php

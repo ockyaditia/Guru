@@ -21,12 +21,12 @@
 						
 						if ($columnName != 'code') {
 				?>
-				<th><div style="width: 140px; word-wrap: break-word;"><?php echo strtoupper($columnName); ?></div></th>
+				<th><div><?php echo strtoupper($columnName); ?></div></th>
 				<?php
 						}
 					}
 				?>
-				<th></th>
+				<th>PILIHAN</th>
 			</tr>
 			<?php
 				while ($data = $result_data->fetch_assoc()) {
@@ -38,11 +38,11 @@
 					$img = $data['img'];
 			?>
 			<tr id="<?php echo $code; ?>">
-				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $name; ?></div></td>
-				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $class; ?></div></td>
-				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $age; ?></div></td>
-				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $description; ?></div></td>
-				<td><div style="width: 140px; word-wrap: break-word;"><img src="img/bg-img/<?php echo $img; ?>" alt="<?php echo $name; ?>" width="200px" height="100px"></div></td>
+				<td><div><?php echo $name; ?></div></td>
+				<td><div><?php echo $class; ?></div></td>
+				<td><div><?php echo $age; ?></div></td>
+				<td><div><?php echo $description; ?></div></td>
+				<td><div><img src="img/bg-img/<?php echo $img; ?>" alt="<?php echo $name; ?>" width="200px" height="100px"></div></td>
 				<td></td>
 			</tr>
 			<?php

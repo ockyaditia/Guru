@@ -21,12 +21,12 @@
 						
 						if ($columnName != 'code') {
 				?>
-				<th><div style="width: 95px; word-wrap: break-word;"><?php echo strtoupper($columnName); ?></div></th>
+				<th><div><?php echo strtoupper($columnName); ?></div></th>
 				<?php
 						}
 					}
 				?>
-				<th></th>
+				<th>PILIHAN</th>
 			</tr>
 			<?php
 				while ($data = $result_data->fetch_assoc()) {
@@ -43,16 +43,16 @@
 					$video = $data['video'];
 			?>
 			<tr id="<?php echo $code; ?>">
-				<td><div style="width: 95px; word-wrap: break-word;"><?php echo $class; ?></div></td>
-				<td><div style="width: 95px; word-wrap: break-word;"><?php echo $subject; ?></div></td>
-				<td><div style="width: 95px; word-wrap: break-word;"><?php echo $question; ?></div></td>
-				<td><div style="width: 95px; word-wrap: break-word;"><?php echo $answer; ?></div></td>
-				<td><div style="width: 95px; word-wrap: break-word;"><?php echo $option_a; ?></div></td>
-				<td><div style="width: 95px; word-wrap: break-word;"><?php echo $option_b; ?></div></td>
-				<td><div style="width: 95px; word-wrap: break-word;"><?php echo $option_c; ?></div></td>
-				<td><div style="width: 95px; word-wrap: break-word;"><?php echo $option_d; ?></div></td>
-				<td><div style="width: 95px; word-wrap: break-word;"><?php echo $option_e; ?></div></td>
-				<td><div style="width: 95px; word-wrap: break-word;"><a href="video/<?php echo $video; ?>">Video <?php echo $subject; ?></a></div></td>
+				<td><div><?php echo $class; ?></div></td>
+				<td><div><?php echo $subject; ?></div></td>
+				<td><div><?php echo $question; ?></div></td>
+				<td><div><?php echo $answer; ?></div></td>
+				<td><div><?php echo $option_a; ?></div></td>
+				<td><div><?php echo $option_b; ?></div></td>
+				<td><div><?php echo $option_c; ?></div></td>
+				<td><div><?php echo $option_d; ?></div></td>
+				<td><div><?php echo $option_e; ?></div></td>
+				<td><div><a href="video/<?php echo $video; ?>">Video <?php echo $subject; ?></a></div></td>
 				<td></td>
 			</tr>
 			<?php

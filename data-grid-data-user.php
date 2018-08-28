@@ -21,12 +21,12 @@
 						
 						if ($columnName != 'code' && $columnName != 'password') {
 				?>
-				<th><div style="width: 140px; word-wrap: break-word;"><?php echo strtoupper($columnName); ?></div></th>
+				<th><div><?php echo strtoupper($columnName); ?></div></th>
 				<?php
 						}
 					}
 				?>
-				<th></th>
+				<th>PILIHAN</th>
 			</tr>
 			<?php
 				while ($data = $result_data->fetch_assoc()) {
@@ -40,13 +40,13 @@
 					$instagram = $data['instagram'];
 			?>
 			<tr id="<?php echo $code; ?>">
-				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $email; ?></div></td>
-				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $name; ?></div></td>
-				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $status; ?></div></td>
-				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $phone_number; ?></div></td>
-				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $facebook; ?></div></td>
-				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $twitter; ?></div></td>
-				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $instagram; ?></div></td>
+				<td><div><?php echo $email; ?></div></td>
+				<td><div><?php echo $name; ?></div></td>
+				<td><div><?php echo $status; ?></div></td>
+				<td><div><?php echo $phone_number; ?></div></td>
+				<td><div><?php echo $facebook; ?></div></td>
+				<td><div><?php echo $twitter; ?></div></td>
+				<td><div><?php echo $instagram; ?></div></td>
 				<td></td>
 			</tr>
 			<?php

@@ -21,12 +21,12 @@
 						
 						if ($columnName != 'code') {
 				?>
-				<th><div style="width: 140px; word-wrap: break-word;"><?php echo strtoupper($columnName); ?></div></th>
+				<th><div><?php echo strtoupper($columnName); ?></div></th>
 				<?php
 						}
 					}
 				?>
-				<th></th>
+				<th>PILIHAN</th>
 			</tr>
 			<?php
 				while ($data = $result_data->fetch_assoc()) {
@@ -38,11 +38,11 @@
 					$file_name = $data['file_name'];
 			?>
 			<tr id="<?php echo $code; ?>">
-				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $class; ?></div></td>
-				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $subject; ?></div></td>
-				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $publisher; ?></div></td>
-				<td><div style="width: 140px; word-wrap: break-word;"><?php echo $description; ?></div></td>
-				<td><div style="width: 140px; word-wrap: break-word;"><a href="video/<?php echo $file_name; ?>">Video <?php echo $subject; ?></a></div></td>
+				<td><div><?php echo $class; ?></div></td>
+				<td><div><?php echo $subject; ?></div></td>
+				<td><div><?php echo $publisher; ?></div></td>
+				<td><div><?php echo $description; ?></div></td>
+				<td><div><a href="video/<?php echo $file_name; ?>">Video <?php echo $subject; ?></a></div></td>
 				<td></td>
 			</tr>
 			<?php

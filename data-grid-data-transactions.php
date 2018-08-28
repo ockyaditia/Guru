@@ -21,12 +21,12 @@
 						
 						if ($columnName != 'code' && $columnName != 'timestamp') {
 				?>
-				<th><div style="width: 120px; word-wrap: break-word;"><?php echo strtoupper($columnName); ?></div></th>
+				<th><div><?php echo strtoupper($columnName); ?></div></th>
 				<?php
 						}
 					}
 				?>
-				<th></th>
+				<th>PILIHAN</th>
 			</tr>
 			<?php
 				while ($data = $result_data->fetch_assoc()) {
@@ -41,14 +41,14 @@
 					$approval = $data['approval'];
 			?>
 			<tr id="<?php echo $code; ?>">
-				<td><div style="width: 120px; word-wrap: break-word;"><?php echo $user_code; ?></div></td>
-				<td><div style="width: 120px; word-wrap: break-word;"><?php echo $subject_code; ?></div></td>
-				<td><div style="width: 120px; word-wrap: break-word;"><?php echo $payment_code; ?></div></td>
-				<td><div style="width: 120px; word-wrap: break-word;"><?php echo $bank_name; ?></div></td>
-				<td><div style="width: 120px; word-wrap: break-word;"><?php echo $account_name; ?></div></td>
-				<td><div style="width: 120px; word-wrap: break-word;"><?php echo $account_number; ?></div></td>
-				<td><div style="width: 120px; word-wrap: break-word;"><img src="img/bg-img/<?php echo $img; ?>" alt="<?php echo $account_name; ?>" width="200px" height="100px"></div></td>
-				<td><div style="width: 120px; word-wrap: break-word;">
+				<td><div><?php echo $user_code; ?></div></td>
+				<td><div><?php echo $subject_code; ?></div></td>
+				<td><div><?php echo $payment_code; ?></div></td>
+				<td><div><?php echo $bank_name; ?></div></td>
+				<td><div><?php echo $account_name; ?></div></td>
+				<td><div><?php echo $account_number; ?></div></td>
+				<td><div><img src="img/bg-img/<?php echo $img; ?>" alt="<?php echo $account_name; ?>" width="200px" height="100px"></div></td>
+				<td><div>
 				<?php
 					if ($approval == 1) {
 				?>
