@@ -53,7 +53,7 @@
 								<?php
 									}
 								?>
-                                <li><a href="#">Produk Kami</a>
+                                <!--<li><a href="#">Produk Kami</a>
                                     <ul class="dropdown">
                                         <li><a href="online-learn-menu.php">Belajar Online</a>
 											<ul class="dropdown">
@@ -68,6 +68,14 @@
                                         <li><a href="online-tryout.php">Tryout Online</a></li>
                                         <li><a href="private-tutoring.php">Les Private</a></li>
                                         <li><a href="virtual-class.php">Kelas Virtual</a></li>
+                                    </ul>
+                                </li>-->
+								<li><a href="online-learn-menu.php">Belajar Online</a>
+                                    <ul class="dropdown">
+										<li><a href="online-learn.php">Umum</a></li>
+										<li><a href="online-learn-stan.php">STAN</a></li>
+										<li><a href="online-learn-majesty.php">Kejurusan</a></li>
+										<li><a href="online-learn-college-exam.php">Ujian PTN</a></li>
                                     </ul>
                                 </li>
                                 <!--<li><a href="coming-soon.php">Materi</a></li>
