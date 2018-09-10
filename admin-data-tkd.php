@@ -81,7 +81,7 @@
 			<br>
 			
 			<div align="right">
-				<a href="admin-data-tkd-question.php">Tambah Data Soal TKD <img src="img/core-img/new.png" width="50px" height="50px" alt="Tambah Data"></a>
+				<a href="admin-data-tkd-question.php">Soal TKD <img src="img/core-img/edit.png" width="50px" height="50px" alt="Tambah Data"></a>
 			</div>
 			
 			<br>

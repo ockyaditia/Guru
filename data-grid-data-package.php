@@ -1,5 +1,18 @@
 		<table id="data-grid-data-package" class="testgrid">
 			<?php
+				$sql = "SELECT * FROM package_detail";
+				
+				if (!$result = $mysqli->query($sql)) {
+					$message = "Error.";
+					//echo "<script type='text/javascript'>alert('$message');</script>";
+				}
+				
+				while ($data = $result->fetch_assoc()) {
+					$package_detail = $data['package'];
+				}
+			?>
+			
+			<?php
 				$sql_column_name = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '".$dbname."' AND TABLE_NAME = 'package'";
 				
 				if (!$result_column_name = $mysqli->query($sql_column_name)) {
@@ -36,13 +49,15 @@
 					$detail = htmlentities($data['detail']);
 					$price = htmlentities($data['price']);
 					$duration = htmlentities($data['duration']);
+					$package = htmlentities($data['package']);
 			?>
 			<tr id="<?php echo $code; ?>">
 				<td><div><?php echo $name; ?></div></td>
 				<td><div><?php echo $description; ?></div></td>
 				<td><div><?php echo $detail; ?></div></td>
-				<td><div><?php echo $price; ?></div></td>
-				<td><div><?php echo $duration; ?></div></td>
+				<td><div>Rp. <?php echo $price; ?>,-</div></td>
+				<td><div><?php echo $duration; ?> Bulan</div></td>
+				<td><div><?php echo $package; ?> Paket (<?php echo $package * $package_detail; ?> Soal)</div></td>
 				<td></td>
 			</tr>
 			<?php

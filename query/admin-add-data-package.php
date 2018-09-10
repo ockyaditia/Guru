@@ -8,10 +8,11 @@
 	$detail = $_POST['detail'];
 	$price = $_POST['price'];
 	$duration = $_POST['duration'];
+	$package = $_POST['package'];
 	
 	// Perform an SQL query
-	$sql = "INSERT INTO package(code, name, description, detail, price, duration)
-			values('$code', '$name', '$description', '$detail', '$price', '$duration')";
+	$sql = "INSERT INTO package(code, name, description, detail, price, duration, package)
+			values('$code', '$name', '$description', '$detail', '$price', '$duration', '$package')";
 
 	if (!$result = $mysqli->query($sql)) {
 		// Oh no! The query failed. 

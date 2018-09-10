@@ -7,8 +7,8 @@
 		include 'header.php';
 		include '_session-admin.php';
 	?>
-	<script src="js/admin-data-tpa-grid.js" ></script>
-	<!-- [DO NOT DEPLOY] --> <script type="text/javascript">window.onload = function() { editableGrid.onloadHTML("data-grid-data-tpa"); } </script>
+	<script src="js/admin-data-package-detail-grid.js" ></script>
+	<!-- [DO NOT DEPLOY] --> <script type="text/javascript">window.onload = function() { editableGrid.onloadHTML("data-grid-data-package-detail"); } </script>
 </head>
 
 <body>
@@ -69,20 +69,10 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading">
-                        <h3>Kelola Data Tes Potensial Akademik (TPA)</h3>
+                        <h3>Kelola Data Jumlah Soal Per Paket</h3>
                     </div>
                 </div>
             </div>
-			
-			<div align="right">
-				<a href="admin-add-data-tpa.php">Tambah Data TPA <img src="img/core-img/new.png" width="50px" height="50px" alt="Tambah Data"></a>
-			</div>
-			
-			<br>
-			
-			<div align="right">
-				<a href="admin-data-tpa-question.php">Soal TPA <img src="img/core-img/edit.png" width="50px" height="50px" alt="Tambah Data"></a>
-			</div>
 			
 			<br>
 			<br>
@@ -127,7 +117,7 @@
 						<!-- Grid contents -->
 						<div id="tablecontent"></div>
 						<div style="overflow:auto; white-space:nowrap;">
-						<!-- [DO NOT DEPLOY] --> <?php include("data-grid-data-tpa.php"); ?>	
+						<!-- [DO NOT DEPLOY] --> <?php include("data-grid-data-package-detail.php"); ?>	
 						</div>
 					
 						<!-- Paginator control -->

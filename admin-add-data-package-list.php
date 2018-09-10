@@ -28,29 +28,6 @@
     </header>
     <!-- ##### Header Area End ##### -->
 	
-	<script>
-		function checkAvailability() {
-			$("#loader-icon1").show();
-			jQuery.ajax({
-				url		: "check-availability-package-code.php",
-				data	: 'code='+$("#code").val(),
-				type	: "POST",
-				success	: function(data){
-					$("#user-availability-status").html(data);
-					$("#loader-icon1").hide();
-				},
-				error	: function (){
-				
-				}
-			});
-		}
-		
-		var loadFile = function(event) {
-			var output = document.getElementById('preview_image');
-			output.src = URL.createObjectURL(event.target.files[0]);
-		};
-	</script>
-	
 	<?php
 		if (isset($_GET['fail'])) {
 	?>
@@ -66,6 +43,32 @@
 	<?php
 		}
 	?>
+	
+	<?php
+		if (isset($_GET['add'])) {
+			$package = $_GET['add'];
+		}
+		
+		if (isset($_GET['type'])) {
+			$type = $_GET['type'];
+		}
+	?>
+	
+	<script>
+		function returnDesc() {
+			jQuery.ajax({
+				url		: "ajax.php",
+				data	: 'question='+$("#question").val()+'&type='+$("#type").val(),
+				type	: "POST",
+				success	: function(data){
+					$("#description").html(data);
+				},
+				error	: function (){
+				
+				}
+			});
+		}
+	</script>
 
     <!-- ##### Register Now Start ##### -->
     <section class="popular-courses-area section-padding-100-70" style="background-image: url(img/core-img/texture.png);">
@@ -76,43 +79,69 @@
                     <div class="col-12">
                         <div class="forms">
                             <h4>Tambah Data Paket</h4>
-                            <form action="query/admin-add-data-package.php" method="post" enctype="multipart/form-data">
+                            <form action="query/admin-add-data-package-list.php" method="post" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="code" name="code" placeholder="Kode" onBlur="checkAvailability()" required>
-											<span id="user-availability-status"></span>
-											<p><img src="img/core-img/loader-icon.gif" id="loader-icon1" style="display:none" width="100" height="70"/></p>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="name" name="name" placeholder="Nama Paket" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <textarea rows="4" cols="50" class="form-control" id="description" name="description" placeholder="Deskripsi" required></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <textarea rows="4" cols="50" class="form-control" id="detail" name="detail" placeholder="Penjelasan" required></textarea>
+                                            <input type="text"  class="form-control" id="package" name="package" value="<?php echo $package; ?>" readonly required>
                                         </div>
                                     </div>
 									<div class="col-12">
                                         <div class="form-group">
-                                            <input type="number" class="form-control" id="price" name="price" placeholder="Harga" required>
+											<select class="form-control" id="type" name="type" onchange="self.location=self.location+'&type='+this.value" required>
+												<option value="" disabled selected>Pilih Jenis Soal</option>
+												<option value="tpa_question"
+												<?php
+												if (isset($_GET['type']) && strpos($type, 'tpa') !== false)
+													echo ' selected';
+												?>
+												>Tes Potensial Akademik</option>
+												<option value="tkd_question"
+												<?php
+												if (isset($_GET['type']) && strpos($type, 'tkd') !== false)
+													echo ' selected';
+												?>
+												>Tes Kompentensi Dasar</option>
+												<option value="tbi_question"
+												<?php
+												if (isset($_GET['type']) && strpos($type, 'tbi') !== false)
+													echo ' selected';
+												?>
+												>Tes Bahasa Inggris</option>
+											</select>
                                         </div>
                                     </div>
+									<?php
+										if (isset($_GET['type'])) {
+									?>
+									<div class="col-12">
+										<div class="form-group">
+											<select class="form-control" id="question" name="question" onBlur="returnDesc()" required>
+												<option value="" disabled selected>Pilih Soal</option>
+												<?php
+													$sql = "SELECT * FROM $type";
+													if (!$result = $mysqli->query($sql)) {
+														$message = "Error.";
+														//echo "<script type='text/javascript'>alert('$message');</script>";
+														exit;
+													}
+													
+													while ($data = $result->fetch_assoc()) {
+														$code_question = $data['code'];
+												?>
+												<option value="<?php echo $code_question; ?>"><?php echo $code_question; ?></option>
+												<?php
+													}
+												?>
+											</select>
+										</div>
+									</div>
+									<?php
+										}
+									?>
 									<div class="col-12">
                                         <div class="form-group">
-                                            <input type="number" class="form-control" id="duration" name="duration" placeholder="Durasi (Dalam Bulan)" required>
-                                        </div>
-                                    </div>
-									<div class="col-12">
-                                        <div class="form-group">
-                                            <input type="number" class="form-control" id="package" name="package" placeholder="Jumlah Paket Soal" required>
+                                            <textarea rows="4" cols="50" class="form-control" id="description" name="description" placeholder="Deksripsi" required readonly ></textarea>
                                         </div>
                                     </div>
                                     <div class="col-12">

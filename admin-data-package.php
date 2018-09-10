@@ -79,6 +79,12 @@
 			</div>
 			
 			<br>
+			
+			<div align="right">
+				<a href="admin-data-package-detail.php">Jumlah Soal Per Paket <img src="img/core-img/edit.png" width="50px" height="50px" alt="Tambah Data"></a>
+			</div>
+			
+			<br>
 			<br>
 
             <div class="row">

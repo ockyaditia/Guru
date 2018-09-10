@@ -16,11 +16,10 @@
 	?>
 	
 	<?php
-		require ("config/config.php");
 		$sql = "SELECT * FROM info";
 		if (!$result = $mysqli->query($sql)) {
 			$message = "Error.";
-			//echo "<script type='text/javascript'>alert('$message');</script>";
+			echo "<script type='text/javascript'>alert('$message');</script>";
 			exit;
 		}
 		
@@ -43,11 +42,10 @@
     <!-- Title -->
 	
 	<?php
-		require ("config/config.php");
 		$sql = "SELECT * FROM logo";
 		if (!$result = $mysqli->query($sql)) {
 			$message = "Error.";
-			//echo "<script type='text/javascript'>alert('$message');</script>";
+			echo "<script type='text/javascript'>alert('$message');</script>";
 			exit;
 		}
 		

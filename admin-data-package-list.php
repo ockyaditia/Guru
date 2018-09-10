@@ -7,8 +7,8 @@
 		include 'header.php';
 		include '_session-admin.php';
 	?>
-	<script src="js/admin-data-tpa-grid.js" ></script>
-	<!-- [DO NOT DEPLOY] --> <script type="text/javascript">window.onload = function() { editableGrid.onloadHTML("data-grid-data-tpa"); } </script>
+	<script src="js/admin-data-package-list-grid.js" ></script>
+	<!-- [DO NOT DEPLOY] --> <script type="text/javascript">window.onload = function() { editableGrid.onloadHTML("data-grid-data-package-list"); } </script>
 </head>
 
 <body>
@@ -62,6 +62,12 @@
 	<?php
 		}
 	?>
+	
+	<?php
+		if (isset($_GET['add'])) {
+			$package = $_GET['add'];
+		}
+	?>
 
     <!-- ##### Popular Courses Start ##### -->
     <section class="popular-courses-area section-padding-100-0" style="background-image: url(img/core-img/texture.png);">
@@ -69,19 +75,13 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading">
-                        <h3>Kelola Data Tes Potensial Akademik (TPA)</h3>
+                        <h3>Kelola Data Soal</h3>
                     </div>
                 </div>
             </div>
 			
 			<div align="right">
-				<a href="admin-add-data-tpa.php">Tambah Data TPA <img src="img/core-img/new.png" width="50px" height="50px" alt="Tambah Data"></a>
-			</div>
-			
-			<br>
-			
-			<div align="right">
-				<a href="admin-data-tpa-question.php">Soal TPA <img src="img/core-img/edit.png" width="50px" height="50px" alt="Tambah Data"></a>
+				<a href="admin-add-data-package-list.php?add=<?php echo $package; ?>">Tambah Data <img src="img/core-img/new.png" width="50px" height="50px" alt="Tambah Data"></a>
 			</div>
 			
 			<br>
@@ -127,7 +127,7 @@
 						<!-- Grid contents -->
 						<div id="tablecontent"></div>
 						<div style="overflow:auto; white-space:nowrap;">
-						<!-- [DO NOT DEPLOY] --> <?php include("data-grid-data-tpa.php"); ?>	
+						<!-- [DO NOT DEPLOY] --> <?php include("data-grid-data-package-list.php"); ?>	
 						</div>
 					
 						<!-- Paginator control -->

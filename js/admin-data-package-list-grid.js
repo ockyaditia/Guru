@@ -42,12 +42,9 @@ EditableGrid.prototype.initializeGrid = function()
 {
 	with (this) {
 		// use a special header renderer to show an info icon for some columns
-		setHeaderRenderer("name", new InfoHeaderRenderer("Nama"));
-		setHeaderRenderer("description", new InfoHeaderRenderer("Deskripsi"));
-		setHeaderRenderer("detail", new InfoHeaderRenderer("Penjelasan"));
-		setHeaderRenderer("price", new InfoHeaderRenderer("Harga"));
-		setHeaderRenderer("duration", new InfoHeaderRenderer("Durasi"));
-		setHeaderRenderer("package", new InfoHeaderRenderer("Paket Soal"));
+		setHeaderRenderer("package", new InfoHeaderRenderer("Paket"));
+		setHeaderRenderer("type", new InfoHeaderRenderer("Jenis"));
+		setHeaderRenderer("question", new InfoHeaderRenderer("Pertanyaan"));
 
 		// register the function that will handle model changes
 		modelChanged = function(rowIndex, columnIndex, oldValue, newValue, row) { 
@@ -76,13 +73,7 @@ EditableGrid.prototype.initializeGrid = function()
 			// this action will remove the row, so first find the ID of the row containing this cell 
 			var rowId = editableGrid.getRowId(cell.rowIndex);
 
-			cell.innerHTML = "<a href='admin-data-package-list.php?add=" + rowId + "'\" style=\"cursor:pointer\">" +
-			"<img src=\"" + image("new.png") + "\" width=\"16px\" height=\"16px\" border=\"0\" alt=\"tambah\" title=\"Tambah\"/></a>";
-
-			cell.innerHTML += "&nbsp;<a href='admin-update-data-package.php?update=" + rowId + "'\" style=\"cursor:pointer\">" +
-			"<img src=\"" + image("edit.png") + "\" width=\"16px\" height=\"16px\" border=\"0\" alt=\"ubah\" title=\"Ubah\"/></a>";
-
-			cell.innerHTML += "&nbsp;<a onclick=\"if (confirm('Apakah anda akan menghapus data tersebut? ')) { href='query/admin-remove-data-package.php?remove=" + rowId + "' } \" style=\"cursor:pointer\">" +
+			cell.innerHTML += "&nbsp;<a onclick=\"if (confirm('Apakah anda akan menghapus data tersebut? ')) { href='query/admin-remove-data-package-list.php?remove=" + rowId + "' } \" style=\"cursor:pointer\">" +
 			"<img src=\"" + image("delete.png") + "\" border=\"0\" alt=\"hapus\" title=\"Hapus\"/></a>";
 
 		}})); 
@@ -130,12 +121,9 @@ EditableGrid.prototype.onloadHTML = function(tableId)
 {
 	// metadata are built in Javascript: we give for each column a name and a type
 	this.load({ metadata: [
-	                       { name: "name", datatype: "html", editable: false },
-	                       { name: "description", datatype: "html", editable: false },
-	                       { name: "detail", datatype: "html", editable: false },
-	                       { name: "price", datatype: "html", editable: false },
-	                       { name: "duration", datatype: "html", editable: false },
 	                       { name: "package", datatype: "html", editable: false },
+	                       { name: "type", datatype: "html", editable: false },
+	                       { name: "question", datatype: "html", editable: false },
 	                       { name: "action", datatype: "html", editable: false }
 	                       ]});
 
@@ -162,8 +150,8 @@ EditableGrid.prototype.duplicate = function(rowIndex)
 //function to render our two demo charts
 EditableGrid.prototype.renderCharts = function() 
 {
-	//this.renderBarChart("barchartcontent", 'Data Paket' + (this.getRowCount() <= this.maxBars ? '' : ' (' + this.maxBars + ' baris dari ' + this.getRowCount() + ' baris)'), 'name', { limit: this.maxBars, bar3d: false, rotateXLabels: this.maxBars > 10 ? 270 : 0 });
-	this.renderPieChart("piechartcontent", 'Data Paket', 'name', 'name');
+	//this.renderBarChart("barchartcontent", 'Data Soal' + (this.getRowCount() <= this.maxBars ? '' : ' (' + this.maxBars + ' baris dari ' + this.getRowCount() + ' baris)'), 'package', { limit: this.maxBars, bar3d: false, rotateXLabels: this.maxBars > 10 ? 270 : 0 });
+	this.renderPieChart("piechartcontent", 'Data Soal', 'package', 'package');
 };
 
 //function to render the paginator control

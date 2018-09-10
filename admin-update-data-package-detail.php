@@ -32,7 +32,7 @@
 		function checkAvailability() {
 			$("#loader-icon1").show();
 			jQuery.ajax({
-				url		: "check-availability-update-package-code.php",
+				url		: "check-availability-update-package-detail-code.php",
 				data	: 'code='+$("#code").val(),
 				data	: 'code='+$("#code").val()+'&code_old='+$("#code_old").val(),
 				type	: "POST",
@@ -73,7 +73,7 @@
 			$code = $_GET['update'];
 			
 			require ("config/config.php");
-			$sql = "SELECT * FROM package WHERE code = '$code'";
+			$sql = "SELECT * FROM package_detail WHERE code = '$code'";
 			if (!$result = $mysqli->query($sql)) {
 				$message = "Error.";
 				//echo "<script type='text/javascript'>alert('$message');</script>";
@@ -82,11 +82,6 @@
 			
 			while ($data = $result->fetch_assoc()) {
 				$code = $data['code'];
-				$name = $data['name'];
-				$description = $data['description'];
-				$detail = $data['detail'];
-				$price = $data['price'];
-				$duration = $data['duration'];
 				$package = $data['package'];
 			}
 		}
@@ -100,44 +95,12 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="forms">
-                            <h4>Ubah Data Paket</h4>
-                            <form action="query/admin-update-data-package.php" method="post" enctype="multipart/form-data">
+                            <h4>Ubah Data Jumlah Soal Per Paket</h4>
+                            <form action="query/admin-update-data-package-detail.php" method="post" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
                                             <input type="hidden" id="code_old" name="code_old" value="<?php echo $code; ?>" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="code" name="code" placeholder="Kode" onBlur="checkAvailability()" value="<?php echo $code; ?>" required>
-											<span id="user-availability-status"></span>
-											<p><img src="img/core-img/loader-icon.gif" id="loader-icon1" style="display:none" width="100" height="70"/></p>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="name" name="name" placeholder="Nama Paket" value="<?php echo $name; ?>" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <textarea rows="4" cols="50" class="form-control" id="description" name="description" placeholder="Deksripsi" required><?php echo $description; ?></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <textarea rows="4" cols="50" class="form-control" id="detail" name="detail" placeholder="Penjelasan" required><?php echo $detail; ?></textarea>
-                                        </div>
-                                    </div>
-									<div class="col-12">
-                                        <div class="form-group">
-                                            <input type="number" class="form-control" id="price" name="price" placeholder="Harga" value="<?php echo $price; ?>" required>
-                                        </div>
-                                    </div>
-									<div class="col-12">
-                                        <div class="form-group">
-                                            <input type="number" class="form-control" id="duration" name="duration" placeholder="Durasi (Dalam Bulan)" value="<?php echo $duration; ?>" required>
                                         </div>
                                     </div>
 									<div class="col-12">

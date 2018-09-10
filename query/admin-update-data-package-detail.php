@@ -2,23 +2,11 @@
 	include("../config/config.php");
 	include '../_session-admin.php';
 	
-	$code = $_POST['code'];
 	$code_old = $_POST['code_old'];
-	$name = $_POST['name'];
-	$description = $_POST['description'];
-	$detail = $_POST['detail'];
-	$price = $_POST['price'];
-	$duration = $_POST['duration'];
 	$package = $_POST['package'];
 	
 	// Perform an SQL query
-	$sql = "UPDATE package SET
-			code='$code',
-			name='$name',
-			description='$description',
-			detail='$detail',
-			price='$price',
-			duration='$duration',
+	$sql = "UPDATE package_detail SET
 			package='$package'
 			WHERE code='$code_old'";
 
@@ -31,8 +19,8 @@
 		echo "Query" . $sql . "\n";
 		echo "Error Number: " . $mysqli->errno . "\n";
 		echo "Error Detail: " . $mysqli->error . "\n";
-		header('location:../admin-add-data-package.php?fail='.$mysqli->errno);
+		header('location:../admin-add-data-package-detail.php?fail='.$mysqli->errno);
 	} else {
-		header('location:../admin-data-package.php?success=2');
+		header('location:../admin-data-package-detail.php?success=2');
 	}
 ?>
