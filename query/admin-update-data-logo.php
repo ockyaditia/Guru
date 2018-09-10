@@ -4,6 +4,7 @@
 	
 	$code_old = $_POST['code_old'];
 	$name = $_POST['name'];
+	$size = $_POST['size'];
 	
 	$location = "location:../admin-update-data-logo.php?fail-message=";
 	
@@ -12,12 +13,14 @@
 	if (basename($_FILES["img"]["name"]) === "") {
 		// Perform an SQL query
 		$sql = "UPDATE logo SET
-				name='$name'
+				name='$name',
+				size='$size'
 				WHERE code='$code_old'";
 	} else {
 		// Perform an SQL query
 		$sql = "UPDATE logo SET
 				name='$name',
+				size='$size',
 				img='$newfilename'
 				WHERE code='$code_old'";
 	}

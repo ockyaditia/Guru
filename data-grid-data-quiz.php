@@ -4,14 +4,14 @@
 				
 				if (!$result_column_name = $mysqli->query($sql_column_name)) {
 					$message = "Error.";
-					echo "<script type='text/javascript'>alert('$message');</script>";
+					//echo "<script type='text/javascript'>alert('$message');</script>";
 				}
 				
 				$sql_data = "SELECT * FROM quiz";
 				
 				if (!$result_data = $mysqli->query($sql_data)) {
 					$message = "Error.";
-					echo "<script type='text/javascript'>alert('$message');</script>";
+					//echo "<script type='text/javascript'>alert('$message');</script>";
 				}
 			?>
 			<tr>
@@ -30,17 +30,17 @@
 			</tr>
 			<?php
 				while ($data = $result_data->fetch_assoc()) {
-					$code = $data['code'];
-					$class = $data['class'];
-					$subject = $data['subject'];
-					$question = $data['question'];
-					$answer = $data['answer'];
-					$option_a = $data['option_a'];
-					$option_b = $data['option_b'];
-					$option_c = $data['option_c'];
-					$option_d = $data['option_d'];
-					$option_e = $data['option_e'];
-					$video = $data['video'];
+					$code = htmlentities($data['code']);
+					$class = htmlentities($data['class']);
+					$subject = htmlentities($data['subject']);
+					$question = htmlentities($data['question']);
+					$answer = htmlentities($data['answer']);
+					$option_a = htmlentities($data['option_a']);
+					$option_b = htmlentities($data['option_b']);
+					$option_c = htmlentities($data['option_c']);
+					$option_d = htmlentities($data['option_d']);
+					$option_e = htmlentities($data['option_e']);
+					$video = htmlentities($data['video']);
 			?>
 			<tr id="<?php echo $code; ?>">
 				<td><div><?php echo $class; ?></div></td>

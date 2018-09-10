@@ -4,14 +4,14 @@
 				
 				if (!$result_column_name = $mysqli->query($sql_column_name)) {
 					$message = "Error.";
-					echo "<script type='text/javascript'>alert('$message');</script>";
+					//echo "<script type='text/javascript'>alert('$message');</script>";
 				}
 				
 				$sql_data = "SELECT * FROM user_access";
 				
 				if (!$result_data = $mysqli->query($sql_data)) {
 					$message = "Error.";
-					echo "<script type='text/javascript'>alert('$message');</script>";
+					//echo "<script type='text/javascript'>alert('$message');</script>";
 				}
 			?>
 			<tr>
@@ -30,14 +30,14 @@
 			</tr>
 			<?php
 				while ($data = $result_data->fetch_assoc()) {
-					$code = $data['code'];
-					$email = $data['email'];
-					$name = $data['name'];
-					$status = $data['status'];
-					$phone_number = $data['phone_number'];
-					$facebook = $data['facebook'];
-					$twitter = $data['twitter'];
-					$instagram = $data['instagram'];
+					$code = htmlentities($data['code']);
+					$email = htmlentities($data['email']);
+					$name = htmlentities($data['name']);
+					$status = htmlentities($data['status']);
+					$phone_number = htmlentities($data['phone_number']);
+					$facebook = htmlentities($data['facebook']);
+					$twitter = htmlentities($data['twitter']);
+					$instagram = htmlentities($data['instagram']);
 			?>
 			<tr id="<?php echo $code; ?>">
 				<td><div><?php echo $email; ?></div></td>

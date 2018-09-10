@@ -20,7 +20,7 @@
 		$sql = "SELECT * FROM info";
 		if (!$result = $mysqli->query($sql)) {
 			$message = "Error.";
-			echo "<script type='text/javascript'>alert('$message');</script>";
+			//echo "<script type='text/javascript'>alert('$message');</script>";
 			exit;
 		}
 		
@@ -47,15 +47,17 @@
 		$sql = "SELECT * FROM logo";
 		if (!$result = $mysqli->query($sql)) {
 			$message = "Error.";
-			echo "<script type='text/javascript'>alert('$message');</script>";
+			//echo "<script type='text/javascript'>alert('$message');</script>";
 			exit;
 		}
 		
 		$logo_name = "";
+		$logo_size = "";
 		$logo_img = "";
 		
 		while ($data = $result->fetch_assoc()) {
 			$logo_name = $data['name'];
+			$logo_size = $data['size'];
 			$logo_img = $data['img'];
 		}
 	?>

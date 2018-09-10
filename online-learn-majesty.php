@@ -32,7 +32,7 @@
 		
 		if (!$result_data = $mysqli->query($sql_data)) {
 			$message = "Error.";
-			echo "<script type='text/javascript'>alert('$message');</script>";
+			//echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 	?>
 	
@@ -41,7 +41,7 @@
 		
 		if (!$result = $mysqli->query($sql)) {
 			$message = "Error.";
-			echo "<script type='text/javascript'>alert('$message');</script>";
+			//echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 	
 		while ($data = $result->fetch_assoc()) {
@@ -57,7 +57,7 @@
                 <div class="col-12">
                     <!-- Hero Content -->
                     <div class="hero-content text-center">
-                        <h2>Kejurusan</h2>
+                        <h2>Kedinasan</h2>
 						<?php
 							if (isset($email) && isset($status) && $status == "Admin") {
 						?>

@@ -4,7 +4,7 @@
                     <div class="col-12">
                         <!-- Footer Logo -->
                         <div class="footer-logo">
-                            <a href="index.php" style="text-transform: uppercase; color:#0aa9c5; letter-spacing: 3px; font-weight: bold; font-size:24pt" ><?php echo $logo_name; ?></a>
+                            <a href="index.php" style="text-transform: uppercase; color:#0aa9c5; letter-spacing: 1px; font-weight: bold; font-size:<?php echo $logo_size; ?>pt" ><?php echo $logo_name; ?></a>
                         </div>
 						<br>
 						<br>
@@ -36,7 +36,7 @@
 										<td><p><a href="about-us.php">Kontak Kami</a></p></td>
 										<!--<td><p><a href="digital-bootcamp.php">Les Online</a></p></td>-->
 										<td><p></p></td>
-										<td><p><a href="online-learn-majesty.php">Kejuruan</p></td>
+										<td><p><a href="online-learn-majesty.php">Kedinasan</p></td>
 										<td><p><a href="online-learn-category.php?category=Sekolah Menengah Atas (SMA)">Sekolah Menengah Atas (SMA)</a></p></td>
 										<!--<td><p><a href="#">Syarat dan Ketentuan</a></p></td>-->
 										<td><p><a href="help.php">Bantuan</a></p></td>
@@ -45,7 +45,7 @@
 										<td><p><a href="about-us.php">Saran</a></p></td>
 										<!--<td><p><a href="online-tryout.php">Tryout Online</a></p></td>-->
 										<td><p></p></td>
-										<td><p><a href="online-learn-college-exam.php">Ujian PTN</a></p></td>
+										<td><p><a href="online-learn-college-exam.php">Seleksi Masuk PTN</a></p></td>
 										<td><p><a href="online-learn-category.php?category=Sekolah Menengah Kejuruan (SMK)">Sekolah Menengah Kejuruan (SMK)</a></p></td>
 										<td><p></p></td>
 									</tr>

@@ -4,14 +4,14 @@
 				
 				if (!$result_column_name = $mysqli->query($sql_column_name)) {
 					$message = "Error.";
-					echo "<script type='text/javascript'>alert('$message');</script>";
+					//echo "<script type='text/javascript'>alert('$message');</script>";
 				}
 				
 				$sql_data = "SELECT * FROM logo";
 				
 				if (!$result_data = $mysqli->query($sql_data)) {
 					$message = "Error.";
-					echo "<script type='text/javascript'>alert('$message');</script>";
+					//echo "<script type='text/javascript'>alert('$message');</script>";
 				}
 			?>
 			<tr>
@@ -30,12 +30,14 @@
 			</tr>
 			<?php
 				while ($data = $result_data->fetch_assoc()) {
-					$code = $data['code'];
-					$name = $data['name'];
-					$img = $data['img'];
+					$code = htmlentities($data['code']);
+					$name = htmlentities($data['name']);
+					$size = htmlentities($data['size']);
+					$img = htmlentities($data['img']);
 			?>
 			<tr id="<?php echo $code; ?>">
 				<td><div><?php echo $name; ?></div></td>
+				<td><div><?php echo $size; ?></div></td>
 				<td><div><img src="img/core-img/<?php echo $img; ?>" alt="<?php echo $name; ?>" width="200px" height="100px"></div></td>
 				<td></td>
 			</tr>

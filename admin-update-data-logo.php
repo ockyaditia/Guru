@@ -52,13 +52,14 @@
 			$sql = "SELECT * FROM logo WHERE code = '$code'";
 			if (!$result = $mysqli->query($sql)) {
 				$message = "Error.";
-				echo "<script type='text/javascript'>alert('$message');</script>";
+				//echo "<script type='text/javascript'>alert('$message');</script>";
 				exit;
 			}
 			
 			while ($data = $result->fetch_assoc()) {
 				$code = $data['code'];
 				$name = $data['name'];
+				$size = $data['size'];
 				$img = $data['img'];
 			}
 		}
@@ -83,6 +84,11 @@
 									<div class="col-12">
                                         <div class="form-group">
 											<input type="text" class="form-control" id="name" name="name" placeholder="Nama Web" value="<?php echo $name; ?>" required>
+                                        </div>
+                                    </div>
+									<div class="col-12">
+                                        <div class="form-group">
+											<input type="number" class="form-control" id="size" name="size" placeholder="Ukuran" value="<?php echo $size; ?>" required>
                                         </div>
                                     </div>
                                     <div class="col-12">

@@ -4,14 +4,14 @@
 				
 				if (!$result_column_name = $mysqli->query($sql_column_name)) {
 					$message = "Error.";
-					echo "<script type='text/javascript'>alert('$message');</script>";
+					//echo "<script type='text/javascript'>alert('$message');</script>";
 				}
 				
 				$sql_data = "SELECT * FROM subjects";
 				
 				if (!$result_data = $mysqli->query($sql_data)) {
 					$message = "Error.";
-					echo "<script type='text/javascript'>alert('$message');</script>";
+					//echo "<script type='text/javascript'>alert('$message');</script>";
 				}
 			?>
 			<tr>
@@ -30,15 +30,15 @@
 			</tr>
 			<?php
 				while ($data = $result_data->fetch_assoc()) {
-					$code = $data['code'];
-					$name = $data['name'];
-					$class = $data['class'];
-					$category = $data['category'];
-					$description = $data['description'];
-					$seat = $data['seat'];
-					$price = $data['price'];
-					$time = $data['time'];
-					$img = $data['img'];
+					$code = htmlentities($data['code']);
+					$name = htmlentities($data['name']);
+					$class = htmlentities($data['class']);
+					$category = htmlentities($data['category']);
+					$description = htmlentities($data['description']);
+					$seat = htmlentities($data['seat']);
+					$price = htmlentities($data['price']);
+					$time = htmlentities($data['time']);
+					$img = htmlentities($data['img']);
 			?>
 			<tr id="<?php echo $code; ?>">
 				<td><div><?php echo $name; ?></div></td>

@@ -2,7 +2,7 @@
 	include("../config/config.php");
 	include '../_session-admin.php';
 	
-	$code_old = $_POST['code_old'];
+	$code_old_info = $_POST['code_old_info'];
 	$phone = $_POST['phone'];
 	$email = $_POST['email'];
 	
@@ -10,7 +10,7 @@
 	$sql = "UPDATE info SET
 			phone='$phone',
 			email='$email'
-			WHERE code='$code_old'";
+			WHERE code='$code_old_info'";
 
 	if (!$result = $mysqli->query($sql)) {
 		// Oh no! The query failed. 

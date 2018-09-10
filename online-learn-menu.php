@@ -32,7 +32,7 @@
 		
 		if (!$result_data = $mysqli->query($sql_data)) {
 			$message = "Error.";
-			echo "<script type='text/javascript'>alert('$message');</script>";
+			//echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 	?>
 	
@@ -41,7 +41,7 @@
 		
 		if (!$result = $mysqli->query($sql)) {
 			$message = "Error.";
-			echo "<script type='text/javascript'>alert('$message');</script>";
+			//echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 	
 		while ($data = $result->fetch_assoc()) {

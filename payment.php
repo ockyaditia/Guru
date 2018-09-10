@@ -37,7 +37,7 @@
 		
 		if (!$result_data = $mysqli->query($sql_data)) {
 			$message = "Error.";
-			echo "<script type='text/javascript'>alert('$message');</script>";
+			//echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 	?>
 

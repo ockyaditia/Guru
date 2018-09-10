@@ -76,7 +76,7 @@
 			$sql = "SELECT * FROM subjects WHERE code = '$code'";
 			if (!$result = $mysqli->query($sql)) {
 				$message = "Error.";
-				echo "<script type='text/javascript'>alert('$message');</script>";
+				//echo "<script type='text/javascript'>alert('$message');</script>";
 				exit;
 			}
 			
@@ -131,7 +131,7 @@
 													$sql = "SELECT * FROM learning_level";
 													if (!$result = $mysqli->query($sql)) {
 														$message = "Error.";
-														echo "<script type='text/javascript'>alert('$message');</script>";
+														//echo "<script type='text/javascript'>alert('$message');</script>";
 														exit;
 													}
 													

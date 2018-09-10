@@ -43,6 +43,7 @@ EditableGrid.prototype.initializeGrid = function()
 	with (this) {
 		// use a special header renderer to show an info icon for some columns
 		setHeaderRenderer("name", new InfoHeaderRenderer("Nama"));
+		setHeaderRenderer("size", new InfoHeaderRenderer("Ukuran"));
 		setHeaderRenderer("img", new InfoHeaderRenderer("Gambar"));
 
 		// register the function that will handle model changes
@@ -121,6 +122,7 @@ EditableGrid.prototype.onloadHTML = function(tableId)
 	// metadata are built in Javascript: we give for each column a name and a type
 	this.load({ metadata: [
 	                       { name: "name", datatype: "html", editable: false },
+	                       { name: "size", datatype: "html", editable: false },
 	                       { name: "img", datatype: "html", editable: false },
 	                       { name: "action", datatype: "html", editable: false }
 	                       ]});

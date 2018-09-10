@@ -64,7 +64,7 @@
 		
 		if (!$result_data = $mysqli->query($sql_data)) {
 			$message = "Error.";
-			echo "<script type='text/javascript'>alert('$message');</script>";
+			//echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 		
 		while ($data = $result_data->fetch_assoc()) {
@@ -82,7 +82,7 @@
 		
 		if (!$result_data = $mysqli->query($sql_data)) {
 			$message = "Error.";
-			echo "<script type='text/javascript'>alert('$message');</script>";
+			//echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 		
 		while ($data = $result_data->fetch_assoc()) {
@@ -265,7 +265,7 @@
 		
 								if (!$result_data = $mysqli->query($sql_data)) {
 									$message = "Error.";
-									echo "<script type='text/javascript'>alert('$message');</script>";
+									//echo "<script type='text/javascript'>alert('$message');</script>";
 								}
 								
 								while ($data = $result_data->fetch_assoc()) {

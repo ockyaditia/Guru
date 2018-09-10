@@ -18,14 +18,14 @@
 		$RSA = new RSA();
 		
 		if ($password == $RSA->decrypt($data['password'])) {
-			$_SESSION['code'] = $data['code'];
-			$_SESSION['email'] = $data['email'];
-			$_SESSION['status'] = $data['status'];
-			$_SESSION['name'] = $data['name'];
-			$_SESSION['phone_number'] = $data['phone_number'];
-			$_SESSION['facebook'] = $data['facebook'];
-			$_SESSION['twitter'] = $data['twitter'];
-			$_SESSION['instagram'] = $data['instagram'];
+			$_SESSION['code'] = htmlentities($data['code']);
+			$_SESSION['email'] = htmlentities($data['email']);
+			$_SESSION['status'] = htmlentities($data['status']);
+			$_SESSION['name'] = htmlentities($data['name']);
+			$_SESSION['phone_number'] = htmlentities($data['phone_number']);
+			$_SESSION['facebook'] = htmlentities($data['facebook']);
+			$_SESSION['twitter'] = htmlentities($data['twitter']);
+			$_SESSION['instagram'] = htmlentities($data['instagram']);
 			header('location:../index.php?success=1');
 		} else {
 			header('location:../login.php?fail=1');

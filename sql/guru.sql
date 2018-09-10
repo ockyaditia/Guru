@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 24 Agu 2018 pada 10.35
+-- Generation Time: 31 Agu 2018 pada 10.50
 -- Versi Server: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -37,6 +37,57 @@ CREATE TABLE IF NOT EXISTS `about_us` (
 
 INSERT INTO `about_us` (`code`, `text`) VALUES
 ('TENTANG_KAMI', '.....');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `background`
+--
+
+CREATE TABLE IF NOT EXISTS `background` (
+  `code` varchar(50) NOT NULL,
+  `img` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `background`
+--
+
+INSERT INTO `background` (`code`, `img`) VALUES
+('ABOUT_US', 'bg1.jpg'),
+('DIGITAL_BOOTCAMP', 'c5.jpg'),
+('HOME', 'bg1.jpg'),
+('ONLINE_LEARN', 'bg4.jpg'),
+('ONLINE_LEARN_COLLEGE_EXAM', 'bg4.jpg'),
+('ONLINE_LEARN_MAJESTY', 'bg4.jpg'),
+('ONLINE_LEARN_MENU', 'bg4.jpg'),
+('ONLINE_LEARN_STAN', 'bg4.jpg'),
+('ONLINE_TRYOUT', 'c8.jpg'),
+('ONLINE_TUTORING', 'c7.jpg'),
+('PRIVATE_TUTORING', 'bg2.jpg'),
+('VIRTUAL_CLASS', 'c4.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `blog`
+--
+
+CREATE TABLE IF NOT EXISTS `blog` (
+`code` int(50) NOT NULL,
+  `subject_code` varchar(50) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `date` varchar(50) NOT NULL,
+  `comment` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `blog`
+--
+
+INSERT INTO `blog` (`code`, `subject_code`, `name`, `email`, `date`, `comment`) VALUES
+(1, 'AGAMA_ISLAM_SD', 'Ocky Aditia Saputra', 'ocky.aditia@gmail.com', '26-08-2018', 'Pesan');
 
 -- --------------------------------------------------------
 
@@ -208,6 +259,29 @@ INSERT INTO `logo` (`code`, `name`, `img`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `package`
+--
+
+CREATE TABLE IF NOT EXISTS `package` (
+  `code` varchar(50) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `description` text NOT NULL,
+  `detail` text NOT NULL,
+  `price` varchar(100) NOT NULL,
+  `duration` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `package`
+--
+
+INSERT INTO `package` (`code`, `name`, `description`, `detail`, `price`, `duration`) VALUES
+('PAKET_1', 'Paket 1', 'Deskripsi Paket 1', 'Penjelasan Paket 1', '500000', 6),
+('PAKET_TRIAL', 'Trial', 'Deksripsi Trial', 'Penjelasan Trial', '0', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `payment`
 --
 
@@ -225,6 +299,25 @@ CREATE TABLE IF NOT EXISTS `payment` (
 
 INSERT INTO `payment` (`code`, `bank_name`, `account_name`, `account_number`, `img`) VALUES
 ('BCA1', 'Bank BCA 1', 'Nama Rekening 1', 'Nomor Rekening 1', '1534295354.png');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `question`
+--
+
+CREATE TABLE IF NOT EXISTS `question` (
+`code` int(50) NOT NULL,
+  `question` text NOT NULL,
+  `answer` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `question`
+--
+
+INSERT INTO `question` (`code`, `question`, `answer`) VALUES
+(1, 'Pertanyaan 1', 'Jawaban 1');
 
 -- --------------------------------------------------------
 
@@ -290,6 +383,7 @@ CREATE TABLE IF NOT EXISTS `subjects` (
   `seat` int(10) NOT NULL,
   `rating` enum('1','2','3','4','5') DEFAULT NULL,
   `price` varchar(150) NOT NULL,
+  `time` int(50) NOT NULL,
   `img` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -297,8 +391,48 @@ CREATE TABLE IF NOT EXISTS `subjects` (
 -- Dumping data untuk tabel `subjects`
 --
 
-INSERT INTO `subjects` (`code`, `name`, `class`, `category`, `description`, `seat`, `rating`, `price`, `img`) VALUES
-('AGAMA_ISLAM_SD', 'Agama Islam', 'Sekolah Dasar (SD)', 'Pendidikan Agama', 'Pendidikan Agama - Agama Islam Jenjang Pembelajaran Sekolah Dasar (SD)', 10, NULL, '50000', '1533970999.png');
+INSERT INTO `subjects` (`code`, `name`, `class`, `category`, `description`, `seat`, `rating`, `price`, `time`, `img`) VALUES
+('AGAMA_ISLAM_SD', 'Agama Islam', 'Sekolah Dasar (SD)', 'Pendidikan Agama', 'Pendidikan Agama - Agama Islam Jenjang Pembelajaran Sekolah Dasar (SD)', 10, NULL, '50000', 1800, '1533970999.png');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tkd`
+--
+
+CREATE TABLE IF NOT EXISTS `tkd` (
+  `code` varchar(50) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tkd`
+--
+
+INSERT INTO `tkd` (`code`, `name`, `description`) VALUES
+('TKD_TIU', 'TIU', 'Tes Intelegensi Umum'),
+('TKD_TKP', 'TKP', 'Tes Karakteristik Pribadi'),
+('TKD_TWK', 'TWK', 'Tes Wawasan Kebangsaan');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tpa`
+--
+
+CREATE TABLE IF NOT EXISTS `tpa` (
+  `code` varchar(50) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tpa`
+--
+
+INSERT INTO `tpa` (`code`, `name`, `description`) VALUES
+('TPA_01', 'TPA 01', 'Persamaan');
 
 -- --------------------------------------------------------
 
@@ -386,6 +520,18 @@ ALTER TABLE `about_us`
  ADD PRIMARY KEY (`code`);
 
 --
+-- Indexes for table `background`
+--
+ALTER TABLE `background`
+ ADD PRIMARY KEY (`code`);
+
+--
+-- Indexes for table `blog`
+--
+ALTER TABLE `blog`
+ ADD PRIMARY KEY (`code`);
+
+--
 -- Indexes for table `comment`
 --
 ALTER TABLE `comment`
@@ -434,9 +580,21 @@ ALTER TABLE `logo`
  ADD PRIMARY KEY (`code`);
 
 --
+-- Indexes for table `package`
+--
+ALTER TABLE `package`
+ ADD PRIMARY KEY (`code`);
+
+--
 -- Indexes for table `payment`
 --
 ALTER TABLE `payment`
+ ADD PRIMARY KEY (`code`);
+
+--
+-- Indexes for table `question`
+--
+ALTER TABLE `question`
  ADD PRIMARY KEY (`code`);
 
 --
@@ -455,6 +613,18 @@ ALTER TABLE `sponsor`
 -- Indexes for table `subjects`
 --
 ALTER TABLE `subjects`
+ ADD PRIMARY KEY (`code`);
+
+--
+-- Indexes for table `tkd`
+--
+ALTER TABLE `tkd`
+ ADD PRIMARY KEY (`code`);
+
+--
+-- Indexes for table `tpa`
+--
+ALTER TABLE `tpa`
  ADD PRIMARY KEY (`code`);
 
 --
@@ -480,10 +650,20 @@ ALTER TABLE `video`
 --
 
 --
+-- AUTO_INCREMENT for table `blog`
+--
+ALTER TABLE `blog`
+MODIFY `code` int(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
 MODIFY `code` int(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `question`
+--
+ALTER TABLE `question`
+MODIFY `code` int(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `sponsor`
 --

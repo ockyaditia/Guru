@@ -4,14 +4,14 @@
 				
 				if (!$result_column_name = $mysqli->query($sql_column_name)) {
 					$message = "Error.";
-					echo "<script type='text/javascript'>alert('$message');</script>";
+					//echo "<script type='text/javascript'>alert('$message');</script>";
 				}
 				
 				$sql_data = "SELECT * FROM transactions";
 				
 				if (!$result_data = $mysqli->query($sql_data)) {
 					$message = "Error.";
-					echo "<script type='text/javascript'>alert('$message');</script>";
+					//echo "<script type='text/javascript'>alert('$message');</script>";
 				}
 			?>
 			<tr>
@@ -30,15 +30,15 @@
 			</tr>
 			<?php
 				while ($data = $result_data->fetch_assoc()) {
-					$code = $data['code'];
-					$user_code = $data['user_code'];
-					$subject_code = $data['subject_code'];
-					$payment_code = $data['payment_code'];
-					$bank_name = $data['bank_name'];
-					$account_name = $data['account_name'];
-					$account_number = $data['account_number'];
-					$img = $data['img'];
-					$approval = $data['approval'];
+					$code = htmlentities($data['code']);
+					$user_code = htmlentities($data['user_code']);
+					$subject_code = htmlentities($data['subject_code']);
+					$payment_code = htmlentities($data['payment_code']);
+					$bank_name = htmlentities($data['bank_name']);
+					$account_name = htmlentities($data['account_name']);
+					$account_number = htmlentities($data['account_number']);
+					$img = htmlentities($data['img']);
+					$approval = htmlentities($data['approval']);
 			?>
 			<tr id="<?php echo $code; ?>">
 				<td><div><?php echo $user_code; ?></div></td>

@@ -38,7 +38,7 @@
 			
 			if (!$result_data = $mysqli->query($sql_data)) {
 				$message = "Error.";
-				echo "<script type='text/javascript'>alert('$message');</script>";
+				//echo "<script type='text/javascript'>alert('$message');</script>";
 			}
 	?>
 	
@@ -47,7 +47,7 @@
 		
 		if (!$result_background = $mysqli->query($sql_background)) {
 			$message = "Error.";
-			echo "<script type='text/javascript'>alert('$message');</script>";
+			//echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 	
 		while ($data_background = $result_background->fetch_assoc()) {
@@ -59,7 +59,7 @@
 		
 		if (!$result_time = $mysqli->query($sql_time)) {
 			$message = "Error.";
-			echo "<script type='text/javascript'>alert('$message');</script>";
+			//echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 	
 		while ($data_time = $result_time->fetch_assoc()) {

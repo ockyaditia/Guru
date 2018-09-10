@@ -4,14 +4,14 @@
 				
 				if (!$result_column_name = $mysqli->query($sql_column_name)) {
 					$message = "Error.";
-					echo "<script type='text/javascript'>alert('$message');</script>";
+					//echo "<script type='text/javascript'>alert('$message');</script>";
 				}
 				
 				$sql_data = "SELECT * FROM learning_level";
 				
 				if (!$result_data = $mysqli->query($sql_data)) {
 					$message = "Error.";
-					echo "<script type='text/javascript'>alert('$message');</script>";
+					//echo "<script type='text/javascript'>alert('$message');</script>";
 				}
 			?>
 			<tr>
@@ -30,12 +30,12 @@
 			</tr>
 			<?php
 				while ($data = $result_data->fetch_assoc()) {
-					$code = $data['code'];
-					$name = $data['name'];
-					$class = $data['class'];
-					$age = $data['age'];
-					$description = $data['description'];
-					$img = $data['img'];
+					$code = htmlentities($data['code']);
+					$name = htmlentities($data['name']);
+					$class = htmlentities($data['class']);
+					$age = htmlentities($data['age']);
+					$description = htmlentities($data['description']);
+					$img = htmlentities($data['img']);
 			?>
 			<tr id="<?php echo $code; ?>">
 				<td><div><?php echo $name; ?></div></td>

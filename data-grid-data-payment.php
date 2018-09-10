@@ -4,14 +4,14 @@
 				
 				if (!$result_column_name = $mysqli->query($sql_column_name)) {
 					$message = "Error.";
-					echo "<script type='text/javascript'>alert('$message');</script>";
+					//echo "<script type='text/javascript'>alert('$message');</script>";
 				}
 				
 				$sql_data = "SELECT * FROM payment";
 				
 				if (!$result_data = $mysqli->query($sql_data)) {
 					$message = "Error.";
-					echo "<script type='text/javascript'>alert('$message');</script>";
+					//echo "<script type='text/javascript'>alert('$message');</script>";
 				}
 			?>
 			<tr>
@@ -30,11 +30,11 @@
 			</tr>
 			<?php
 				while ($data = $result_data->fetch_assoc()) {
-					$code = $data['code'];
-					$bank_name = $data['bank_name'];
-					$account_name = $data['account_name'];
-					$account_number = $data['account_number'];
-					$img = $data['img'];
+					$code = htmlentities($data['code']);
+					$bank_name = htmlentities($data['bank_name']);
+					$account_name = htmlentities($data['account_name']);
+					$account_number = htmlentities($data['account_number']);
+					$img = htmlentities($data['img']);
 			?>
 			<tr id="<?php echo $code; ?>">
 				<td><div><?php echo $bank_name; ?></div></td>

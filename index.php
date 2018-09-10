@@ -72,21 +72,21 @@
 		
 		if (!$result_data_learning_level = $mysqli->query($sql_data_learning_level)) {
 			$message = "Error.";
-			echo "<script type='text/javascript'>alert('$message');</script>";
+			//echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 		
 		$sql_data_subjects = "SELECT count(*) FROM subjects";
 		
 		if (!$result_data_subjects = $mysqli->query($sql_data_subjects)) {
 			$message = "Error.";
-			echo "<script type='text/javascript'>alert('$message');</script>";
+			//echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 		
 		$sql_data_ebook = "SELECT count(*) FROM e_book";
 		
 		if (!$result_data_ebook = $mysqli->query($sql_data_ebook)) {
 			$message = "Error.";
-			echo "<script type='text/javascript'>alert('$message');</script>";
+			//echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 	?>
 	
@@ -95,7 +95,7 @@
 		
 		if (!$result = $mysqli->query($sql)) {
 			$message = "Error.";
-			echo "<script type='text/javascript'>alert('$message');</script>";
+			//echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 	
 		while ($data = $result->fetch_assoc()) {
@@ -226,7 +226,7 @@
 			
 					if (!$result_data = $mysqli->query($sql_data)) {
 						$message = "Error.";
-						echo "<script type='text/javascript'>alert('$message');</script>";
+						//echo "<script type='text/javascript'>alert('$message');</script>";
 					}
 				
 					$transition = 0;
@@ -288,7 +288,7 @@
 					
 					if (!$result_data = $mysqli->query($sql_data)) {
 						$message = "Error.";
-						echo "<script type='text/javascript'>alert('$message');</script>";
+						//echo "<script type='text/javascript'>alert('$message');</script>";
 					}
 					
 					$transition = 0;
