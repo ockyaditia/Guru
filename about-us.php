@@ -174,7 +174,7 @@
 												$text = '';
 												while ($data = $result_data->fetch_assoc()) {
 													$code = $data['code'];
-													$text = $data['text'];
+													$text = htmlentities($data['text']);
 												}
 												
 												if (isset($email) && isset($status) && $status == "Admin") {
@@ -345,8 +345,8 @@
 													
 													while ($data = $result_data->fetch_assoc()) {
 														$code = $data['code'];
-														$question = $data['question'];
-														$answer = $data['answer'];
+														$question = htmlentities($data['question']);
+														$answer = htmlentities($data['answer']);
 														
 														if (isset($email) && isset($status) && $status == "Admin") {
 												?>
@@ -559,9 +559,9 @@
 											
 											while ($data = $result_data->fetch_assoc()) {
 												$code = $data['code'];
-												$name = $data['name'];
-												$date = $data['date'];
-												$comment = $data['comment'];
+												$name = htmlentities($data['name']);
+												$date = htmlentities($data['date']);
+												$comment = htmlentities($data['comment']);
 										?>
 
                                         <!-- Single Review -->
@@ -666,8 +666,8 @@
 													
 													while ($data = $result_data->fetch_assoc()) {
 														$code = $data['code'];
-														$name = $data['name'];
-														$description = $data['description'];
+														$name = htmlentities($data['name']);
+														$description = htmlentities($data['description']);
 														$img = $data['img'];
 														
 														if (isset($email) && isset($status) && $status == "Admin") {
@@ -738,7 +738,7 @@
 												$text = '';
 												while ($data = $result_data->fetch_assoc()) {
 													$code = $data['code'];
-													$text = $data['text'];
+													$text = htmlentities($data['text']);
 												}
 												
 												if (isset($email) && isset($status) && $status == "Admin") {

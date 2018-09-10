@@ -121,7 +121,7 @@
 						<div id="paginator"></div>
 					
 						<!-- Edition zone (to demonstrate the "fixed" editor mode) -->
-						<div id="edition"></div>
+						<!--<div id="edition"></div>-->
 						
 						<!-- Charts zone -->
 						<!--<div id="barchartcontent"></div>-->

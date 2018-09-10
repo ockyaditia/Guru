@@ -84,14 +84,14 @@
 					
 					$transition = 0;
 					while ($data = $result_data->fetch_assoc()) {
-						$code = $data['code'];
-						$name = $data['name'];
-						$class = $data['class'];
-						$category = $data['category'];
-						$description = $data['description'];
-						$seat = $data['seat'];
-						$price = $data['price'];
-						$img = $data['img'];
+						$code = htmlentities($data['code']);
+						$name = htmlentities($data['name']);
+						$class = htmlentities($data['class']);
+						$category = htmlentities($data['category']);
+						$description = htmlentities($data['description']);
+						$seat = htmlentities($data['seat']);
+						$price = htmlentities($data['price']);
+						$img = htmlentities($data['img']);
 						
 						$transition += 250;
 				?>

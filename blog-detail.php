@@ -68,14 +68,14 @@
 		}
 		
 		while ($data = $result_data->fetch_assoc()) {
-			$code = $data['code'];
-			$name = $data['name'];
-			$class = $data['class'];
-			$category = $data['category'];
-			$description = $data['description'];
-			$seat = $data['seat'];
-			$price = $data['price'];
-			$img = $data['img'];
+			$code = htmlentities($data['code']);
+			$name = htmlentities($data['name']);
+			$class = htmlentities($data['class']);
+			$category = htmlentities($data['category']);
+			$description = htmlentities($data['description']);
+			$seat = htmlentities($data['seat']);
+			$price = htmlentities($data['price']);
+			$img = htmlentities($data['img']);
 		}
 		
 		$sql_data = "SELECT count(*) FROM blog WHERE subject_code='$code'";
@@ -269,12 +269,12 @@
 								}
 								
 								while ($data = $result_data->fetch_assoc()) {
-									$code = $data['code'];
-									$subject_code = $data['subject_code'];
-									$name = $data['name'];
-									$date = $data['date'];
-									$email = $data['email'];
-									$comment = $data['comment'];
+									$code = htmlentities($data['code']);
+									$subject_code = htmlentities($data['subject_code']);
+									$name = htmlentities($data['name']);
+									$date = htmlentities($data['date']);
+									$email = htmlentities($data['email']);
+									$comment = htmlentities($data['comment']);
 							?>
                             <li class="single_comment_area mb-30">
                                 <!-- Single Comment -->

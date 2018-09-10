@@ -25,12 +25,12 @@
 		}
 		
 		while ($data = $result->fetch_assoc()) {
-			$code_info = $data['code'];
-			$email_info = $data['email'];
-			$phone_info = $data['phone'];
-			$facebook_info = $data['facebook'];
-			$twitter_info = $data['twitter'];
-			$instagram_info = $data['instagram'];
+			$code_info = htmlentities($data['code']);
+			$email_info = htmlentities($data['email']);
+			$phone_info = htmlentities($data['phone']);
+			$facebook_info = htmlentities($data['facebook']);
+			$twitter_info = htmlentities($data['twitter']);
+			$instagram_info = htmlentities($data['instagram']);
 		}
 	?>
 
@@ -56,7 +56,7 @@
 		$logo_img = "";
 		
 		while ($data = $result->fetch_assoc()) {
-			$logo_name = $data['name'];
+			$logo_name = htmlentities($data['name']);
 			$logo_size = $data['size'];
 			$logo_img = $data['img'];
 		}
