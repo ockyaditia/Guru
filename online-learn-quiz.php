@@ -16,14 +16,14 @@
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
 
-        <!-- Top Header Area -->
-        <?php
-			include 'body-header.php';
-		?>
-        <!-- Navbar Area -->
-        <?php
-			include 'body-menu.php';
-		?>
+	<!-- Top Header Area -->
+	<?php
+		include 'body-header.php';
+	?>
+	<!-- Navbar Area -->
+	<?php
+		include 'body-menu.php';
+	?>
     </header>
     <!-- ##### Header Area End ##### -->
 	
