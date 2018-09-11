@@ -74,6 +74,10 @@
                 </div>
             </div>
 			
+			<div align="left">
+				<a href="admin-data-package.php"><img src="img/core-img/back.png" width="75px" height="75px" alt="Kembali"> Kembali</a>
+			</div>
+			
 			<br>
 			<br>
 

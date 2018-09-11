@@ -66,6 +66,41 @@
 	<?php
 		if (isset($_GET['add'])) {
 			$package = $_GET['add'];
+			
+			$sql = "SELECT count(*) FROM package_list WHERE package = '$package'";
+			if (!$result = $mysqli->query($sql)) {
+				$message = "Error.";
+				//echo "<script type='text/javascript'>alert('$message');</script>";
+				exit;
+			}
+			
+			while ($data = $result->fetch_assoc()) {
+				$count = $data['count(*)'];
+			}
+			
+			$sql = "SELECT package FROM package WHERE code = '$package'";
+			if (!$result = $mysqli->query($sql)) {
+				$message = "Error.";
+				//echo "<script type='text/javascript'>alert('$message');</script>";
+				exit;
+			}
+			
+			while ($data = $result->fetch_assoc()) {
+				$package_number = $data['package'];
+			}
+			
+			$sql = "SELECT package FROM package_detail";
+			if (!$result = $mysqli->query($sql)) {
+				$message = "Error.";
+				//echo "<script type='text/javascript'>alert('$message');</script>";
+				exit;
+			}
+			
+			while ($data = $result->fetch_assoc()) {
+				$package_detail = $data['package'];
+			}
+			
+			$package_total = $package_number * $package_detail;
 		}
 	?>
 
@@ -80,9 +115,25 @@
                 </div>
             </div>
 			
+			<div align="left">
+				<a href="admin-data-package.php"><img src="img/core-img/back.png" width="75px" height="75px" alt="Kembali"> Kembali</a>
+			</div>
+			
+			<?php
+				if ($count < $package_total) {
+			?>
 			<div align="right">
 				<a href="admin-add-data-package-list.php?add=<?php echo $package; ?>">Tambah Data <img src="img/core-img/new.png" width="50px" height="50px" alt="Tambah Data"></a>
 			</div>
+			<?php
+				} else {
+			?>
+			<div align="right">
+				<h6>Soal Telah Terdaftar Sebanyak <?php echo $package_total; ?> Soal</h6>
+			</div>
+			<?php
+				}
+			?>
 			
 			<br>
 			<br>

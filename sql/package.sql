@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 10, 2018 at 08:42 AM
+-- Generation Time: Sep 10, 2018 at 02:29 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -34,16 +34,19 @@ CREATE TABLE `package` (
   `description` text NOT NULL,
   `detail` text NOT NULL,
   `price` varchar(100) NOT NULL,
-  `duration` int(50) NOT NULL
+  `duration` int(50) NOT NULL,
+  `package` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `package`
 --
 
-INSERT INTO `package` (`code`, `name`, `description`, `detail`, `price`, `duration`) VALUES
-('PAKET_1', 'Paket 1', 'Deskripsi Paket 1', 'Penjelasan Paket 1', '500000', 6),
-('PAKET_TRIAL', 'Trial', 'Deksripsi Trial', 'Penjelasan Trial', '0', 1);
+INSERT INTO `package` (`code`, `name`, `description`, `detail`, `price`, `duration`, `package`) VALUES
+('PAKET_1', 'Paket 1', 'Deskripsi Paket 1', 'Penjelasan Paket 1', '500000', 6, 5),
+('PAKET_2', 'Paket 2', 'Deskripsi Paket 2', 'Penjelasan Paket 2', '1000000', 6, 10),
+('PAKET_3', 'Paket 3', 'Deskripsi Paket 3', 'Penjelasan Paket 3', '1500000', 6, 20),
+('PAKET_TRIAL', 'Trial', 'Deksripsi Trial', 'Penjelasan Trial', '0', 1, 1);
 
 --
 -- Indexes for dumped tables

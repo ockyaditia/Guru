@@ -74,6 +74,10 @@
                 </div>
             </div>
 			
+			<div align="left">
+				<a href="admin-data-tpa.php"><img src="img/core-img/back.png" width="75px" height="75px" alt="Kembali"> Kembali</a>
+			</div>
+			
 			<div align="right">
 				<a href="admin-add-data-tkd-question.php">Tambah Data <img src="img/core-img/new.png" width="50px" height="50px" alt="Tambah Data"></a>
 			</div>
