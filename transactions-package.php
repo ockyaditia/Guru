@@ -34,12 +34,12 @@
 	
 	<?php
 		$user_code = $_SESSION['code'];
-		$subject_code = "";
+		$package_code = "";
 		$payment_code = "";
 		
-		if (isset($_GET['subject_code'])) {
+		if (isset($_GET['package_code'])) {
 			//header('location:index.php');
-			$subject_code = $_GET['subject_code'];
+			$package_code = $_GET['package_code'];
 		}
 		
 		if (isset($_GET['payment_code'])) {
@@ -48,10 +48,10 @@
 		}
 		
 		//$user_code = $_SESSION['code'];
-		//$subject_code = $_GET['subject_code'];
+		//$package_code = $_GET['package_code'];
 		//$payment_code = $_GET['payment_code'];
 		
-		$sql_data = "SELECT *, count(*) FROM transactions WHERE user_code='$user_code' AND subject_code='$subject_code'";
+		$sql_data = "SELECT *, count(*) FROM transactions_package WHERE user_code='$user_code' AND package_code='$package_code'";
 		
 		if (!$result_data = $mysqli->query($sql_data)) {
 			$message = "Error.";
@@ -90,6 +90,50 @@
 		}
 	?>
 
+	<?php
+		if (strpos($package_code, 'TRIAL') !== false) {
+	?>
+    <!-- ##### Register Now Start ##### -->
+    <section class="popular-courses-area section-padding-100-70" style="background-image: url(img/core-img/texture.png);">
+        <!-- Register Contact Form -->
+        <div class="register-contact-form mb-100 wow fadeInUp" data-wow-delay="250ms">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="forms">
+                            <h4>Konfirmasi</h4>
+                            <form action="query/transactions-package-trial.php" method="post" enctype="multipart/form-data">
+                                <div class="row">
+									<div class="col-12">
+                                        <div class="form-group">
+                                            <input type="hidden" class="form-control" id="user_code" name="user_code" placeholder="User Code" value="<?php echo $user_code; ?>" required>
+                                        </div>
+                                    </div>
+									<div class="col-12">
+                                        <div class="form-group">
+                                            <input type="hidden" class="form-control" id="package_code" name="package_code" placeholder="Package Code" value="<?php echo $package_code; ?>" required>
+                                        </div>
+                                    </div>
+									<div class="col-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" value="Paket Trial" readonly required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn clever-btn w-100">Lanjutkan</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Register Now End ##### -->
+	<?php
+		} else {
+	?>
     <!-- ##### Register Now Start ##### -->
     <section class="popular-courses-area section-padding-100-70" style="background-image: url(img/core-img/texture.png);">
         <!-- Register Contact Form -->
@@ -99,7 +143,7 @@
                     <div class="col-12">
                         <div class="forms">
                             <h4>Isi Data Pembayaran Anda</h4>
-                            <form action="query/transactions.php" method="post" enctype="multipart/form-data">
+                            <form action="query/transactions-package.php" method="post" enctype="multipart/form-data">
                                 <div class="row">
 									<div class="col-12">
                                         <div class="form-group">
@@ -108,7 +152,7 @@
                                     </div>
 									<div class="col-12">
                                         <div class="form-group">
-                                            <input type="hidden" class="form-control" id="subject_code" name="subject_code" placeholder="Subject Code" value="<?php echo $subject_code; ?>" required>
+                                            <input type="hidden" class="form-control" id="package_code" name="package_code" placeholder="Package Code" value="<?php echo $package_code; ?>" required>
                                         </div>
                                     </div>
 									<div class="col-12">
@@ -150,6 +194,9 @@
         </div>
     </section>
     <!-- ##### Register Now End ##### -->
+	<?php
+		}
+	?>
 	
 	<?php
 		} else {

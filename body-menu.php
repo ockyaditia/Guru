@@ -50,6 +50,7 @@
                                         <li><a href="admin-data-tkd.php">Data TKD</a></li>
                                         <li><a href="admin-data-tbi.php">Data TBI</a></li>
                                         <li><a href="admin-data-package.php">Data Paket</a></li>
+                                        <li><a href="admin-data-transactions-package.php">Data Transaksi</a></li>
                                         <!--<li><a href="admin-data-to-written-question.php">Soal TO Tertulis</a></li>
                                         <li><a href="admin-data-to-tkd-question.php">Soal TO TKD</a></li>-->
                                     </ul>
