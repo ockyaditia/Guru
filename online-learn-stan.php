@@ -28,7 +28,7 @@
     <!-- ##### Header Area End ##### -->
 	
 	<?php
-		$sql_data = "SELECT * FROM learning_level";
+		$sql_data = "SELECT * FROM majesty_package WHERE subject='STAN'";
 		
 		if (!$result_data = $mysqli->query($sql_data)) {
 			$message = "Error.";
@@ -98,6 +98,52 @@
                         <h6>Memahami materi pelajaran jadi lebih mudah dengan materi dan video menarik yang bisa kamu pelajari. Ribuan video belajar tersedia buat kamu.</h6>
                     </div>
                 </div>
+            </div>
+
+            <div class="row">
+				<?php
+					$transition = 0;
+					while ($data = $result_data->fetch_assoc()) {
+						$code = $data['code'];
+						$name = $data['name'];
+						$description = $data['description'];
+						$detail = $data['detail'];
+						$price = $data['price'];
+						$duration = $data['duration'];
+						
+						$transition += 250;
+				?>
+                <!-- Single Popular Course -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-popular-course mb-100 wow fadeInUp" data-wow-delay="<?php echo $transition; ?>ms">
+                        <img src="img/bg-img/<?php echo $img; ?>" alt="<?php echo $name; ?>">
+                        <!-- Course Content -->
+                        <div class="course-content">
+                            <a href="online-learn-stan-category.php?code=<?php echo $code; ?>"><h4><?php echo $name; ?></h4></a>
+                            <div class="meta d-flex align-items-center">
+                            </div>
+                            <p><?php echo $description; ?></p>
+                            <p><?php echo $detail; ?></p>
+                        </div>
+                        <!-- Seat Rating Fee -->
+                        <div class="seat-rating-fee d-flex justify-content-between">
+                            <div class="seat-rating h-100 d-flex align-items-center">
+                                <div class="seat">
+                                    <!--<i class="fa fa-user" aria-hidden="true"></i>--> <?php echo $duration; ?> Bulan Langganan
+                                </div>
+                                <!--<div class="rating">
+                                    <i class="fa fa-star" aria-hidden="true"></i> 5
+                                </div>-->
+                            </div>
+                            <div class="course-fee h-100">
+                                <a href="#" class="free"><?php echo $price; ?></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<?php
+					}
+				?>
             </div>
         </div>
     </section>

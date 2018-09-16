@@ -28,13 +28,7 @@
     <!-- ##### Header Area End ##### -->
 	
 	<?php
-		if (isset($_GET['code'])) {
-			$package_code = $_GET['code'];
-		}
-	?>
-	
-	<?php
-		$sql_data = "SELECT * FROM majesty_package WHERE subject='$package_code'";
+		$sql_data = "SELECT * FROM majesty_menu";
 		
 		if (!$result_data = $mysqli->query($sql_data)) {
 			$message = "Error.";
@@ -43,7 +37,7 @@
 	?>
 	
 	<?php
-		$sql = "SELECT * FROM background WHERE code='ONLINE_LEARN_STAN'";
+		$sql = "SELECT * FROM background WHERE code='ONLINE_LEARN_MAJESTY'";
 		
 		if (!$result = $mysqli->query($sql)) {
 			$message = "Error.";
@@ -63,7 +57,7 @@
                 <div class="col-12">
                     <!-- Hero Content -->
                     <div class="hero-content text-center">
-                        <h2>STAN</h2>
+                        <h2>Kedinasan</h2>
 						<?php
 							if (isset($email) && isset($status) && $status == "Admin") {
 						?>
@@ -99,51 +93,38 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading">
-                        <h3 style="background-color:#ff288d;"><i>#LearnIsSimple</i></h3>
+                        <h3 style="background-color:#bcf7cb;"><i>#LearnIsExciting</i></h3>
 						<br>
                         <h6>Memahami materi pelajaran jadi lebih mudah dengan materi dan video menarik yang bisa kamu pelajari. Ribuan video belajar tersedia buat kamu.</h6>
                     </div>
                 </div>
             </div>
-
-            <div class="row">
+			
+			<div class="row">
 				<?php
 					$transition = 0;
 					while ($data = $result_data->fetch_assoc()) {
 						$code = $data['code'];
 						$name = $data['name'];
-						$description = $data['description'];
-						$detail = $data['detail'];
-						$price = $data['price'];
-						$duration = $data['duration'];
+						$img = $data['img'];
 						
 						$transition += 250;
 				?>
-                <!-- Single Popular Course -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-popular-course mb-100 wow fadeInUp" data-wow-delay="<?php echo $transition; ?>ms">
+                <!-- Single Blog Area -->
+                <div class="col-12 col-md-6">
+                    <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="<?php echo $transition; ?>ms">
                         <img src="img/bg-img/<?php echo $img; ?>" alt="<?php echo $name; ?>">
-                        <!-- Course Content -->
-                        <div class="course-content">
-                            <a href="online-learn-majesty-category.php?code=<?php echo $code; ?>"><h4><?php echo $name; ?></h4></a>
-                            <div class="meta d-flex align-items-center">
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <a href="online-learn-majesty.php?code=<?php echo $code; ?>" class="blog-headline">
+                                <h4><?php echo $name; ?></h4>
+                            </a>
+                            <!--<div class="meta d-flex align-items-center">
+                                <a href="#"><?php echo ''; ?></a>
+                                <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                                <a href="#"><?php echo ''; ?></a>
                             </div>
-                            <p><?php echo $description; ?></p>
-                            <p><?php echo $detail; ?></p>
-                        </div>
-                        <!-- Seat Rating Fee -->
-                        <div class="seat-rating-fee d-flex justify-content-between">
-                            <div class="seat-rating h-100 d-flex align-items-center">
-                                <div class="seat">
-                                    <!--<i class="fa fa-user" aria-hidden="true"></i>--> <?php echo $duration; ?> Bulan Langganan
-                                </div>
-                                <!--<div class="rating">
-                                    <i class="fa fa-star" aria-hidden="true"></i> 5
-                                </div>-->
-                            </div>
-                            <div class="course-fee h-100">
-                                <a href="#" class="free"><?php echo $price; ?></a>
-                            </div>
+                            <p><?php echo ''; ?></p>-->
                         </div>
                     </div>
                 </div>

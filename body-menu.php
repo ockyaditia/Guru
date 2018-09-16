@@ -30,6 +30,7 @@
                                     <ul class="dropdown">
                                         <li><a href="admin-data-logo.php">Nama dan Logo</a></li>
                                         <li><a href="admin-data-learning-level-menu.php">Menu Belajar Online</a></li>
+                                        <li><a href="admin-data-majesty-menu.php">Menu Kedinasan</a></li>
                                         <li><a href="admin-data-user.php">Data Pengguna</a></li>
                                     </ul>
                                 </li>
@@ -53,6 +54,13 @@
                                         <li><a href="admin-data-transactions-package.php">Data Transaksi</a></li>
                                         <!--<li><a href="admin-data-to-written-question.php">Soal TO Tertulis</a></li>
                                         <li><a href="admin-data-to-tkd-question.php">Soal TO TKD</a></li>-->
+                                    </ul>
+                                </li>
+                                <li><a href="#">Kelola Data STAN dan Kedinasan</a>
+                                    <ul class="dropdown">
+                                        <li><a href="admin-data-majesty-question.php">Data Soal</a></li>
+                                        <li><a href="admin-data-majesty.php">Data Paket</a></li>
+                                        <li><a href="admin-data-transactions-majesty.php">Data Transaksi</a></li>
                                     </ul>
                                 </li>
 								<?php
@@ -79,7 +87,27 @@
                                     <ul class="dropdown">
 										<li><a href="online-learn.php">Umum</a></li>
 										<li><a href="online-learn-stan.php">STAN</a></li>
-										<li><a href="online-learn-majesty.php">Kedinasan</a></li>
+                                        <li><a href="online-learn-majesty-menu.php">Kedinasan</a>
+											<ul class="dropdown">
+												<?php
+													$sql_data = "SELECT * FROM majesty_menu";
+													
+													if (!$result_data = $mysqli->query($sql_data)) {
+														$message = "Error.";
+														//echo "<script type='text/javascript'>alert('$message');</script>";
+													}
+													
+													while ($data = $result_data->fetch_assoc()) {
+														$code_majesty = $data['code'];
+														$name_majesty = $data['name'];
+														$img_majesty = $data['img'];
+												?>
+												<li><a href="online-learn-majesty.php?code=<?php echo $code_majesty; ?>"><?php echo $name_majesty; ?></a></li>
+												<?php
+													}
+												?>
+											</ul>
+										</li>
 										<li><a href="online-learn-college-exam.php">Seleksi Masuk PTN</a></li>
                                     </ul>
                                 </li>
